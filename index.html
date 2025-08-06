@@ -1,71 +1,135 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>William Shelton's Homepage</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人主页 / Personal Homepage</title>
+  <!-- 外部 CSS 引用 -->
+  <link rel="stylesheet" href="/williamshelton-cyber/style.css">
 </head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#about">自我介绍 / About Me</a></li>
-                <li><a href="#education">教育经历 / Education</a></li>
-                <li><a href="#projects">项目展示 / Projects</a></li>
-                <li><a href="#interests">兴趣点 / Interests</a></li>
-                <li><a href="#posts">帖子 / Posts</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section id="about">
-            <h2>自我介绍</h2>
-            <p>这里填写你的个人介绍...</p>
-            <h2>About Me</h2>
-            <p>Your English introduction here...</p>
-        </section>
-        
-        <section id="education">
-            <h2>教育经历</h2>
-            <p>你的教育背景...</p>
-            <h2>Education</h2>
-            <p>Your education history...</p>
-        </section>
-        
-        <section id="projects">
-            <h2>项目展示</h2>
-            <div class="project">
-                <h3>项目标题</h3>
-                <p>项目描述...</p>
-                <a href="pdfs/test.pdf" download="test.pdf">下载PDF</a>
-            </div>
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>Project Title</h3>
-                <p>Project description...</p>
-                <a href="pdfs/test.pdf" download="test.pdf">Download PDF</a>
-            </div>
-        </section>
-        
-        <section id="interests">
-            <h2>兴趣点</h2>
-            <p>你的兴趣爱好...</p>
-            <h2>Interests</h2>
-            <p>Your interests...</p>
-        </section>
-        
-        <section id="posts">
-            <h2>帖子</h2>
-            <p>你的文章内容...</p>
-            <h2>Posts</h2>
-            <p>Your posts content...</p>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2025 William Shelton</p>
-    </footer>
+<body class="lang-en">
+
+  <!-- 头部：包含名字、语言切换按钮和导航 -->
+  <header>
+    <div class="container">
+      <!-- 姓名 -->
+      <h1 class="name lang-en">Your Name</h1>
+      <h1 class="name lang-zh">你的名字</h1>
+
+      <!-- 语言切换按钮 -->
+      <button id="lang-switcher">中文 / English</button>
+
+      <!-- 导航栏 -->
+      <nav>
+        <ul>
+          <li><a href="#about" class="lang-en">About</a><a href="#about" class="lang-zh">关于</a></li>
+          <li><a href="#projects" class="lang-en">Projects</a><a href="#projects" class="lang-zh">项目</a></li>
+          <li><a href="#education" class="lang-en">Education</a><a href="#education" class="lang-zh">教育</a></li>
+          <li><a href="#blog" class="lang-en">Blog</a><a href="#blog" class="lang-zh">博客</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <main class="container">
+    <!-- 自我介绍版块 -->
+    <section id="about">
+      <h2 class="lang-en">About Me</h2>
+      <h2 class="lang-zh">关于我</h2>
+      <div class="intro">
+        <!-- 头像（请在 images 文件夹下放置 avatar.jpg） -->
+        <img src="images/avatar.jpg" alt="Avatar" class="avatar">
+        <div class="intro-text">
+          <h3 class="lang-en">Occupation: Web Developer</h3>
+          <h3 class="lang-zh">职业：网页开发</h3>
+          <p class="lang-en">Hello! I am a web developer with a passion for creating clean and functional designs.</p>
+          <p class="lang-zh">你好！我是一名网页开发者，热衷于创建干净、功能齐全的设计。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 项目展示版块 -->
+    <section id="projects">
+      <h2 class="lang-en">Projects</h2>
+      <h2 class="lang-zh">项目展示</h2>
+      <div class="projects-container">
+        <div class="project-card">
+          <h3 class="lang-en">Project One</h3>
+          <h3 class="lang-zh">项目一</h3>
+          <p class="lang-en">Description of project one goes here. It is a brief overview of the project.</p>
+          <p class="lang-zh">项目一的描述在此。它是该项目的简要概述。</p>
+          <a href="#" class="project-link">GitHub / Link</a>
+        </div>
+        <div class="project-card">
+          <h3 class="lang-en">Project Two</h3>
+          <h3 class="lang-zh">项目二</h3>
+          <p class="lang-en">Description of project two goes here. It is a brief overview of the project.</p>
+          <p class="lang-zh">项目二的描述在此。它是该项目的简要概述。</p>
+          <a href="#" class="project-link">GitHub / Link</a>
+        </div>
+        <!-- 你可以根据需要增加更多项目卡片 -->
+      </div>
+    </section>
+
+    <!-- 教育经历版块 -->
+    <section id="education">
+      <h2 class="lang-en">Education</h2>
+      <h2 class="lang-zh">教育经历</h2>
+      <ul class="education-list">
+        <li>
+          <span class="education-time">2015 - 2019</span>
+          <span class="education-info lang-en">University Name, Major, Bachelor’s Degree</span>
+          <span class="education-info lang-zh">学校名称，专业，学士学位</span>
+        </li>
+        <li>
+          <span class="education-time">2020 - 2022</span>
+          <span class="education-info lang-en">Graduate School, Major, Master’s Degree</span>
+          <span class="education-info lang-zh">研究生院名称，专业，硕士学位</span>
+        </li>
+        <!-- 根据实际情况可以增加更多教育经历 -->
+      </ul>
+    </section>
+
+    <!-- 博客/评论区版块（只读静态内容） -->
+    <section id="blog">
+      <h2 class="lang-en">Blog</h2>
+      <h2 class="lang-zh">博客</h2>
+      <article class="blog-post">
+        <h3 class="lang-en">Post Title 1</h3>
+        <h3 class="lang-zh">帖子标题 1</h3>
+        <p class="lang-en">This is a summary of the blog post. It can be updated via Markdown or HTML.</p>
+        <p class="lang-zh">这是博客帖子的摘要。它可以通过Markdown或HTML进行更新。</p>
+      </article>
+      <article class="blog-post">
+        <h3 class="lang-en">Post Title 2</h3>
+        <h3 class="lang-zh">帖子标题 2</h3>
+        <p class="lang-en">This is another summary of the blog post. It can be updated via Markdown or HTML.</p>
+        <p class="lang-zh">这是另一篇博客帖子的摘要。它可以通过Markdown或HTML进行更新。</p>
+      </article>
+      <!-- 可以根据需要增加更多静态博文摘要 -->
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer>
+    <div class="container">
+      <p class="lang-en">© 2025 Your Name. All rights reserved.</p>
+      <p class="lang-zh">© 2025 你的名字。保留所有权利。</p>
+    </div>
+  </footer>
+
+  <!-- 语言切换脚本：切换 body 类名来显示对应语言内容 -->
+  <script>
+    document.getElementById('lang-switcher').addEventListener('click', function() {
+      const body = document.body;
+      if (body.classList.contains('lang-en')) {
+        body.classList.remove('lang-en');
+        body.classList.add('lang-zh');
+      } else {
+        body.classList.remove('lang-zh');
+        body.classList.add('lang-en');
+      }
+    });
+  </script>
 </body>
 </html>
