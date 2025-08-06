@@ -1,0 +1,105 @@
+/* 基础样式 */
+body {
+    font-family: "SimSun", "Times New Roman", serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e6f7ff; /* 淡蓝色背景 */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 导航栏样式 - 楷体/Times New Roman */
+nav ul {
+    list-style-type: none;
+    background-color: #87ceeb; /* 天蓝色 */
+    padding: 15px 0;
+    text-align: center;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    font-family: "KaiTi", "Times New Roman", serif;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #5f9ea0; /* 悬停效果 */
+}
+
+/* 内容区域 */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+section {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e6f7ff;
+}
+
+h2 {
+    color: #1e90ff; /* 深天蓝色 */
+    font-family: "KaiTi", "Times New Roman", serif;
+    border-left: 4px solid #87ceeb;
+    padding-left: 10px;
+}
+
+/* 项目展示样式 */
+.project {
+    background-color: #f0f8ff;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.project a {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #1e90ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+    font-family: "Times New Roman", serif;
+}
+
+.project a:hover {
+    background-color: #0066cc;
+}
+
+/* 页脚 */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #87ceeb;
+    color: white;
+    font-family: "Times New Roman", serif;
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    main {
+        padding: 10px;
+    }
+}
