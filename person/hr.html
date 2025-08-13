@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人经历介绍</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'nordic-blue': '#A8DADC',
+                        'nordic-light': '#F1FAEE',
+                        'nordic-green': '#457B9D',
+                        'nordic-dark': '#1D3557',
+                        'nordic-accent': '#E63946'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .transition-smooth {
+                transition: all 0.3s ease-in-out;
+            }
+        }
+    </style>
+</head>
+<body class="bg-nordic-light min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <h1 class="text-nordic-dark font-bold text-xl">Personal Profile</h1>
+            <div class="flex space-x-4">
+                <button id="zh-btn" class="px-3 py-1 bg-nordic-blue text-nordic-dark rounded transition-smooth hover:bg-opacity-80">中文</button>
+                <button id="en-btn" class="px-3 py-1 bg-nordic-green text-white rounded transition-smooth hover:bg-opacity-80">English</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- 个人信息 -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <div class="text-center md:text-left">
+                <h2 class="zh text-2xl font-bold text-nordic-dark mb-4">个人信息</h2>
+                <h2 class="en text-2xl font-bold text-nordic-dark mb-4 hidden">Personal Information</h2>
+                
+                <p class="zh mb-2"><span class="font-semibold text-nordic-green">性别：</span>男</p>
+                <p class="en mb-2 hidden"><span class="font-semibold text-nordic-green">Gender：</span>Male</p>
+                
+                <p class="zh mb-2"><span class="font-semibold text-nordic-green">专业：</span>计算机科学与技术</p>
+                <p class="en mb-2 hidden"><span class="font-semibold text-nordic-green">Major：</span>Computer Science</p>
+                
+                <p class="zh mb-2"><span class="font-semibold text-nordic-green">学院：</span>数据科学学院（SDS）·香港中文大学深圳</p>
+                <p class="en mb-2 hidden"><span class="font-semibold text-nordic-green">College：</span>School of Data Science (SDS) · The Chinese University of Hong Kong, Shenzhen</p>
+
+               <p class="zh mb-2"><span class="font-semibold text-nordic-green">学生组织职务：</span>青年会·组织部干事</p>
+                <p class="en mb-2 hidden"><span class="font-semibold text-nordic-green">Young Men's Association · Secretary of the Organization Department</p>
+            </div>
+        </section>
+
+        <!-- 所会技能 -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="zh text-xl font-bold text-nordic-dark mb-4 flex items-center">
+                <i class="fa fa-cogs text-nordic-green mr-2"></i>所会技能
+            </h2>
+            <h2 class="en text-xl font-bold text-nordic-dark mb-4 flex items-center hidden">
+                <i class="fa fa-cogs text-nordic-green mr-2"></i>Skills
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <ul class="zh space-y-2">
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-nordic-green mt-1 mr-2"></i>
+                        <span>编程语言：Python, Java, HTML</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-nordic-green mt-1 mr-2"></i>
+                        <span>数学能力：熟练掌握：数学分析，高等代数；基本通晓概率论与数理统计</span>
+                    </li>
+                </ul>
+                
+                <ul class="zh space-y-2">
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-nordic-green mt-1 mr-2"></i>
+                        <span>数据科学：尚在起步</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-nordic-green mt-1 mr-2"></i>
+                        <span>机器学习：Pytorch, Scikit-learn</span>
+                    </li>
+                </ul>
+                
+                <ul class="en space-y-2 hidden">
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-nordic-green mt-1 mr-2"></i>
+                        <span>Programming: Python, Java, HTML</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-nordic-green mt-1 mr-2"></i>
+                        <span>Mathematical abilities: Proficient in: Mathematical Analysis, Advanced Algebra; Basically familiar with Probability Theory and Mathematical Statistics</span>
+                    </li>
+                </ul>
+                
+                <ul class="en space-y-2 hidden">
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-nordic-green mt-1 mr-2"></i>
+                        <span>Data Science: Still in its infancy</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa fa-check-circle text-nordic-green mt-1 mr-2"></i>
+                        <span>Machine Learning: Pytorch, Scikit-learn</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 获奖情况 -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="zh text-xl font-bold text-nordic-dark mb-4 flex items-center">
+                <i class="fa fa-trophy text-nordic-accent mr-2"></i>曾获奖项
+            </h2>
+            <h2 class="en text-xl font-bold text-nordic-dark mb-4 flex items-center hidden">
+                <i class="fa fa-trophy text-nordic-accent mr-2"></i>Awards
+            </h2>
+            
+            <ul class="zh space-y-2">
+                <li class="flex items-start">
+                    <i class="fa fa-star text-nordic-green mt-1 mr-2"></i>
+                    <span>2024年全国大学生数学竞赛·数学组三等奖</span>
+                </li>
+               
+            </ul>
+            
+            <ul class="en space-y-2 hidden">
+                <li class="flex items-start">
+                    <i class="fa fa-star text-nordic-green mt-1 mr-2"></i>
+                    <span>2024年全国大学生数学竞赛·数学组三等奖</span>
+                </li>
+                
+            </ul>
+        </section>
+
+        <!-- 成绩单 -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="zh text-xl font-bold text-nordic-dark mb-4 flex items-center">
+                <i class="fa fa-graduation-cap text-nordic-green mr-2"></i>成绩单
+            </h2>
+            <h2 class="en text-xl font-bold text-nordic-dark mb-4 flex items-center hidden">
+                <i class="fa fa-graduation-cap text-nordic-green mr-2"></i>Transcripts
+            </h2>
+            
+            <!-- 第一学年 -->
+            <div class="mb-6">
+                <h3 class="zh font-semibold text-nordic-dark mb-3">第一学年</h3>
+                <h3 class="en font-semibold text-nordic-dark mb-3 hidden">First Academic Year</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- 绩点+图片 -->
+                    <div class="border-2 border-nordic-blue rounded-lg p-4 hover:shadow-md transition-smooth">
+                        <div class="zh font-medium text-nordic-green mb-2">绩点</div>
+                        <div class="en font-medium text-nordic-green mb-2 hidden">GPA</div>
+                        <div class="aspect-video bg-nordic-light rounded flex items-center justify-center mb-2">
+                            <i class="fa fa-file-text-o text-nordic-green text-2xl"></i>
+                             <img src="trans1.jpg" alt="图片描述">
+                        </div>
+                        <div class="zh text-sm text-center text-gray-600">点击上传绩点证明</div>
+                        <div class="en text-sm text-center text-gray-600 hidden">Click to upload GPA certificate</div>
+                    </div>
+                    <!-- 排名 -->
+                    <div class="border-2 border-nordic-green rounded-lg p-4 hover:shadow-md transition-smooth">
+                        <div class="zh font-medium text-nordic-green mb-2">排名</div>
+                        <div class="en font-medium text-nordic-green mb-2 hidden">Ranking</div>
+                        <div class="aspect-video bg-nordic-light rounded flex items-center justify-center">
+                            <p class="zh text-nordic-dark text-center px-2">CGPA处于计算机科学与技术专业同期236名同学中第18名。<br>CGPA处于数据科学学院同期570名同学中第33名</p>
+                            <p class="en text-nordic-dark text-center px-2 hidden">The CGPA ranks 18th among 236 students in the same cohort of the Computer Science and Technology major. <br>The CGPA ranks 33rd among 570 students in the same cohort of the School of Data Science.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      
+            
+            <!-- 第二学年 -->
+            <div>
+                <h3 class="zh font-semibold text-nordic-dark mb-3">第二学年</h3>
+                <h3 class="en font-semibold text-nordic-dark mb-3 hidden">Fourth Academic Year</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- 绩点+图片 -->
+                    <div class="border-2 border-nordic-blue rounded-lg p-4 hover:shadow-md transition-smooth">
+                        <div class="zh font-medium text-nordic-green mb-2">绩点</div>
+                        <div class="en font-medium text-nordic-green mb-2 hidden">GPA</div>
+                        <div class="aspect-video bg-nordic-light rounded flex items-center justify-center mb-2">
+                            <i class="fa fa-file-text-o text-nordic-green text-2xl"></i>
+                        </div>
+                        <div class="zh text-sm text-center text-gray-600">点击上传绩点证明</div>
+                        <div class="en text-sm text-center text-gray-600 hidden">Click to upload GPA certificate</div>
+                    </div>
+                    <!-- 排名 -->
+                    <div class="border-2 border-nordic-green rounded-lg p-4 hover:shadow-md transition-smooth">
+                        <div class="zh font-medium text-nordic-green mb-2">排名</div>
+                        <div class="en font-medium text-nordic-green mb-2 hidden">Ranking</div>
+                        <div class="aspect-video bg-nordic-light rounded flex items-center justify-center">
+                            <p class="zh text-nordic-dark text-center px-2">专业排名前？%<br>年级排名前？%</p>
+                            <p class="en text-nordic-dark text-center px-2 hidden">Top 3% in major<br>Top 8% in grade</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系方式 -->
+        <section class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="zh text-xl font-bold text-nordic-dark mb-4 flex items-center">
+                <i class="fa fa-contact-card-o text-nordic-green mr-2"></i>联系方式
+            </h2>
+            <h2 class="en text-xl font-bold text-nordic-dark mb-4 flex items-center hidden">
+                <i class="fa fa-contact-card-o text-nordic-green mr-2"></i>Contact Information
+            </h2>
+            
+            <div class="flex items-center">
+                <div class="w-16 h-16 bg-nordic-light rounded-full flex items-center justify-center mr-4">
+                    <i class="fa fa-weixin text-3xl text-green-600"></i>
+                </div>
+                <div>
+                    <p class="zh font-medium text-nordic-dark">微信</p>
+                    <p class="en font-medium text-nordic-dark hidden">WeChat</p>
+                    <p class="zh text-gray-600">wxid_1234567890abc</p>
+                    <p class="en text-gray-600 hidden">wxid_1234567890abc</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-nordic-dark text-white py-6 mt-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="zh">©  个人经历介绍</p>
+            <p class="en hidden">©  Personal Profile</p>
+        </div>
+    </footer>
+
+    <script>
+        // 语言切换功能
+        document.getElementById('zh-btn').addEventListener('click', function() {
+            document.querySelectorAll('.zh').forEach(el => el.classList.remove('hidden'));
+            document.querySelectorAll('.en').forEach(el => el.classList.add('hidden'));
+            this.classList.remove('bg-opacity-80');
+            this.classList.add('bg-nordic-blue');
+            document.getElementById('en-btn').classList.remove('bg-nordic-green');
+            document.getElementById('en-btn').classList.add('bg-opacity-80');
+        });
+        
+        document.getElementById('en-btn').addEventListener('click', function() {
+            document.querySelectorAll('.en').forEach(el => el.classList.remove('hidden'));
+            document.querySelectorAll('.zh').forEach(el => el.classList.add('hidden'));
+            this.classList.remove('bg-opacity-80');
+            this.classList.add('bg-nordic-green');
+            document.getElementById('zh-btn').classList.remove('bg-nordic-blue');
+            document.getElementById('zh-btn').classList.add('bg-opacity-80');
+        });
+
+        // 成绩单框点击效果（模拟图片上传）
+        document.querySelectorAll('.border-nordic-blue').forEach(box => {
+            box.addEventListener('click', function() {
+                alert('此处可上传绩点证明图片');
+            });
+        });
+    </script>
+</body>
+</html>
