@@ -8,30 +8,44 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
+
+  <!-- LANGUAGE & MENU CONTROLS (pure HTML/CSS; no JavaScript) -->
+  <!-- Radio buttons for language selection (placed before main so CSS selectors can target main) -->
+  <input type="radio" name="site-lang" id="lang-en" checked class="visually-hidden">
+  <input type="radio" name="site-lang" id="lang-zh" class="visually-hidden">
+
+  <!-- Checkbox for mobile menu toggle -->
+  <input type="checkbox" id="menu-open" class="visually-hidden">
+
+  <header class="site-header" role="banner">
     <div class="brand">
       <div class="logo" aria-hidden="true"></div>
-      <h1 class="site-title"><span data-lang="en">William Shelton</span><span data-lang="zh">William Shelton</span></h1>
+      <h1 class="site-title">
+        <span data-lang="en">William Shelton</span>
+        <span data-lang="zh">William Shelton</span>
+      </h1>
     </div>
 
     <nav class="top-controls" aria-label="Top controls">
       <div class="lang-switch" role="tablist" aria-label="Language switch">
-        <button id="btn-en" class="lang-btn" data-lang-toggle="en" aria-pressed="true">EN</button>
-        <button id="btn-zh" class="lang-btn" data-lang-toggle="zh" aria-pressed="false">中文</button>
+        <label for="lang-en" class="lang-btn" role="button" aria-pressed="true">EN</label>
+        <label for="lang-zh" class="lang-btn" role="button" aria-pressed="false">中文</label>
       </div>
-      <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="main-nav">☰</button>
+
+      <!-- mobile menu button -->
+      <label for="menu-open" id="menu-toggle" class="menu-toggle" aria-controls="main-nav" role="button">☰</label>
     </nav>
   </header>
 
   <main id="site-main">
     <aside class="sidebar" id="main-nav" role="navigation" aria-label="Main sections">
       <ul>
-        <li><a href="#profile" data-lang-ignore>Profile/个人</a></li>
-        <li><a href="#education" data-lang-ignore>Education/教育经历</a></li>
-        <li><a href="#busy" data-lang-ignore>Busy/最近在忙</a></li>
-        <li><a href="#projects" data-lang-ignore>Projects/项目展示</a></li>
-        <li><a href="#notes" data-lang-ignore>Notes/学习笔记</a></li>
-        <li><a href="#posts" data-lang-ignore>Posts/帖子与随想</a></li>
+        <li><a href="#profile" data-lang-ignore>Profile / 个人</a></li>
+        <li><a href="#education" data-lang-ignore>Education / 教育经历</a></li>
+        <li><a href="#busy" data-lang-ignore>Busy / 最近在忙</a></li>
+        <li><a href="#projects" data-lang-ignore>Projects / 项目展示</a></li>
+        <li><a href="#notes" data-lang-ignore>Notes / 学习笔记</a></li>
+        <li><a href="#posts" data-lang-ignore>Posts / 帖子</a></li>
       </ul>
     </aside>
 
@@ -42,23 +56,24 @@
           <img src="avatar.jpg" alt="Avatar of William Shelton" class="avatar" />
           <div class="profile-info">
             <h2>
-              <span data-lang="en">William·Shelton</span>
+              <span data-lang="en">William · Shelton</span>
               <span data-lang="zh">William Shelton</span>
             </h2>
             <p class="basic-info">
-              <span data-lang="en">Male • Computer student • Hobbies: coding ＆math</span>
-              <span data-lang="zh">男 • 计算机在读学生 • coding ＆math</span>
-              <span data-lang="en">【Interests points】: Computer CS Programming; AI and Machine Learning; Advanced Mathematical Analysis and Algebra; Computer Vision</span>
-              <span data-lang="zh">【兴趣点】：计算机CS程序设计；AI与机器学习；高等数学分析学与代数学；计算机视觉</span>
+              <span data-lang="en">Male • Computer student • Hobbies: coding &amp; math</span>
+              <span data-lang="zh">男 • 计算机在读学生 • 兴趣：编程 与 数学</span><br/>
+              <span data-lang="en">Interests: CS Programming; AI &amp; ML; Advanced Math; Computer Vision</span>
+              <span data-lang="zh">兴趣点：计算机程序设计；AI与机器学习；高等数学；计算机视觉</span>
             </p>
 
             <div class="profile-actions">
-              <a href="person/about.html" class="btn" id="btn-learn" rel="noopener"> 
+              <!-- simple links to pages in person/ folder -->
+              <a href="person/about.html" class="btn" id="btn-learn" rel="noopener">
                 <span data-lang="en">Learn more</span>
                 <span data-lang="zh">进一步了解我</span>
               </a>
               <a href="person/hr.html" class="btn ghost" id="btn-hr" rel="noopener">
-                <span data-lang="en">For professors & HR</span>
+                <span data-lang="en">For professors &amp; HR</span>
                 <span data-lang="zh">教授和HR点击</span>
               </a>
             </div>
@@ -74,12 +89,21 @@
         </h3>
         <div class="edu-list">
           <article>
-            <h4><span data-lang="en">Yuyao Experimental School, Zhejiang Province·Junior Middle School</span><span data-lang="zh">浙江省余姚市实验学校·初级中学</span></h4>
-            <h4><span data-lang="en">Zhenhai High School, Zhejiang Province · Senior High School</span><span data-lang="zh">浙江省镇海中学·高级中学</span></h4>
-            <h4><span data-lang="en">The Chinese University of Hong Kong, Shenzhen · Undergraduate</span><span data-lang="zh">香港中文大学深圳·本科</span></h4>
+            <h4>
+              <span data-lang="en">Yuyao Experimental School, Zhejiang Province · Junior Middle School</span>
+              <span data-lang="zh">浙江省余姚市实验学校 · 初中</span>
+            </h4>
+            <h4>
+              <span data-lang="en">Zhenhai High School, Zhejiang Province · Senior High School</span>
+              <span data-lang="zh">浙江省镇海中学 · 高中</span>
+            </h4>
+            <h4>
+              <span data-lang="en">The Chinese University of Hong Kong, Shenzhen · Undergraduate</span>
+              <span data-lang="zh">香港中文大学（深圳） · 本科</span>
+            </h4>
             <p class="muted">
-              <span data-lang="en">【Directions and Fields】）: Middle School Stage: Physics/Chemistry/Politics; University Stage: Engineering·Computer Science</span>
-              <span data-lang="zh">【方向与领域】）：中学阶段：物理/化学/政治； 大学阶段：工学·计算机科学</span>
+              <span data-lang="en">Directions: physics/chem/politics (middle); engineering &amp; computer science (university).</span>
+              <span data-lang="zh">方向：中学阶段物理/化学/政治；大学阶段工学与计算机科学。</span>
             </p>
           </article>
         </div>
@@ -89,22 +113,29 @@
       <section id="busy" class="card">
         <h3><span data-lang="en">Currently working on</span><span data-lang="zh">最近在忙的事项</span></h3>
 
-        <!-- 精致文本框：包含两个范例（中英文），文本为纯文本，避免任何 HTML 注入风险 -->
         <div id="busy-content" class="safe-box" aria-live="polite">
-          <!-- Example 1 -->
           <div class="example-item" data-example="1">
-            <div><strong><span data-lang="en">1) Polishing a webapp for my portfolio — Deadline: Aug 20, 2025.</span><span data-lang="zh">1）打磨个人作品集小型 Web 应用 — 截止：2025-08-20。</span></strong></div>
+            <div>
+              <strong>
+                <span data-lang="en">1) Polishing a webapp for my portfolio — Deadline: Aug 20, 2025.</span>
+                <span data-lang="zh">1）打磨个人作品集小型 Web 应用 — 截止：2025-08-20。</span>
+              </strong>
+            </div>
             <div style="margin-top:6px;">
-              <span data-lang="en">Focus: responsive UI, bilingual support, and secure static hosting.</span>
+              <span data-lang="en">Focus: responsive UI, bilingual support, secure static hosting.</span>
               <span data-lang="zh">重点：响应式 UI、双语支持、以及安全的静态托管。</span>
             </div>
           </div>
 
           <div style="height:10px"></div>
 
-          <!-- Example 2 -->
           <div class="example-item" data-example="2">
-            <div><strong><span data-lang="en">2) Reading papers on large models & system design.</span><span data-lang="zh">2）研读关于大模型与系统设计的论文。</span></strong></div>
+            <div>
+              <strong>
+                <span data-lang="en">2) Reading papers on large models &amp; system design.</span>
+                <span data-lang="zh">2）研读关于大模型与系统设计的论文。</span>
+              </strong>
+            </div>
             <div style="margin-top:6px;">
               <span data-lang="en">Notes: summarize architectures and experiment setups for later posts.</span>
               <span data-lang="zh">笔记：汇总架构与实验设置，便于后续发布。</span>
@@ -122,20 +153,19 @@
       <section id="projects" class="card">
         <h3><span data-lang="en">Projects</span><span data-lang="zh">项目展示</span></h3>
 
-        <!-- 两个项目范例（静态卡片） -->
         <div id="projects-list" class="grid-cards">
           <div class="project">
             <h4><span data-lang="en">Portfolio Site</span><span data-lang="zh">个人主页</span></h4>
             <p class="muted">
-              <span data-lang="en">A lightweight bilingual static site built with HTML/CSS/JS. Focus on security and accessibility.</span>
-              <span data-lang="zh">一个轻量的中英双语静态站点，使用 HTML/CSS/JS 构建，注重安全与可访问性。</span>
+              <span data-lang="en">A lightweight bilingual static site built with HTML/CSS. Focus on security and accessibility.</span>
+              <span data-lang="zh">一个轻量的中英双语静态站点，使用 HTML/CSS 构建，注重安全与可访问性。</span>
             </p>
           </div>
 
           <div class="project">
             <h4><span data-lang="en">Study Notes Hub</span><span data-lang="zh">学习笔记库</span></h4>
             <p class="muted">
-              <span data-lang="en">Collection of concise notes on algorithms and systems; searchable offline.</span>
+              <span data-lang="en">Collection of concise notes on algorithms and systems; offline-friendly.</span>
               <span data-lang="zh">关于算法与系统的简洁笔记集合，支持离线查看。</span>
             </p>
           </div>
@@ -146,12 +176,11 @@
       <section id="notes" class="card">
         <h3><span data-lang="en">Learning Notes</span><span data-lang="zh">学习笔记</span></h3>
 
-        <!-- 两个学习笔记范例 -->
         <div id="notes-list" class="notes-list">
           <div class="post">
             <h4><span data-lang="en">B-Tree Summary</span><span data-lang="zh">B 树笔记</span></h4>
             <p>
-              <span data-lang="en">Key points: node structure, insertion & deletion sketches, and I/O considerations.</span>
+              <span data-lang="en">Key points: node structure, insertion &amp; deletion sketches, I/O considerations.</span>
               <span data-lang="zh">要点：结点结构、插入与删除要点，以及 I/O 考量。</span>
             </p>
           </div>
@@ -159,7 +188,7 @@
           <div class="post">
             <h4><span data-lang="en">Practical Systems Checklist</span><span data-lang="zh">系统调试清单</span></h4>
             <p>
-              <span data-lang="en">Checklist for profiling, bottleneck analysis, and reproducible experiments.</span>
+              <span data-lang="en">Checklist for profiling, bottleneck analysis and reproducible experiments.</span>
               <span data-lang="zh">性能剖析、瓶颈分析与可复现实验的检查清单。</span>
             </p>
           </div>
@@ -170,14 +199,13 @@
       <section id="posts" class="card">
         <h3><span data-lang="en">Posts</span><span data-lang="zh">我的帖子</span></h3>
 
-        <!-- 两个只属于你的帖子范例（对外可见但不可编辑） -->
         <div id="posts-list" class="posts-list" aria-live="polite">
           <article class="post">
             <div class="muted small">2025-08-13</div>
             <p>
               <strong><span data-lang="en">First Public Post: Hello World</span><span data-lang="zh">第一条帖子：Hello World</span></strong><br/>
-              <span data-lang="en">Hello — welcome to my site. I'll share notes and project updates here.Hello World is my first cry.</span>
-              <span data-lang="zh">你好 — 欢迎来到我的主页。我会在这里分享笔记与项目进展。Hello World 是我的第一声啼哭。</span>
+              <span data-lang="en">Hello — welcome to my site. I'll share notes and project updates here.</span>
+              <span data-lang="zh">你好 — 欢迎来到我的主页。我会在这里分享笔记与项目进展。</span>
             </p>
           </article>
 
@@ -193,7 +221,7 @@
 
         <p class="muted small">
           <span data-lang="en">Visible to everyone. Only the owner may update via repo commits.</span>
-          <span data-lang="zh">所有人可见，只有William可通过提交更新内容。</span>
+          <span data-lang="zh">所有人可见，只有 William 可通过提交更新内容。</span>
         </p>
       </section>
 
@@ -203,6 +231,6 @@
     </section>
   </main>
 
-  <script src="script.js" defer></script>
+  <!-- NOTE: No external JavaScript file. All controls work with HTML + CSS only. -->
 </body>
 </html>
