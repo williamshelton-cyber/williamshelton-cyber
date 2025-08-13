@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>William Shelton | 个人主页</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 语言切换按钮 -->
+    <div class="language-toggle">
+        <button id="langToggle" class="lang-btn">
+            <i class="fas fa-globe"></i>
+            <span id="langText">English</span>
+        </button>
+    </div>
+
+    <!-- 主导航 -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-logo">William Shelton</div>
+            <ul class="nav-menu">
+                <li><a href="#home" data-zh="首页" data-en="Home">首页</a></li>
+                <li><a href="#education" data-zh="教育经历" data-en="Education">教育经历</a></li>
+                <li><a href="#current" data-zh="最近在忙" data-en="Current Focus">最近在忙</a></li>
+                <li><a href="#projects" data-zh="项目展示" data-en="Projects">项目展示</a></li>
+                <li><a href="#notes" data-zh="学习笔记" data-en="Study Notes">学习笔记</a></li>
+                <li><a href="#posts" data-zh="个人动态" data-en="Posts">个人动态</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 个人信息部分 -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="avatar-container">
+                    <img src="avatar.jpg" alt="William Shelton" class="avatar">
+                    <div class="avatar-ring"></div>
+                </div>
+                <div class="hero-text">
+                    <h1 class="hero-title">William Shelton</h1>
+                    <div class="basic-info">
+                        <div class="info-item">
+                            <i class="fas fa-user"></i>
+                            <span class="lang-text" data-zh="性别：男" data-en="Gender: Male">性别：男</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span class="lang-text" data-zh="职业：计算机在读学生" data-en="Occupation: Computer Science Student">职业：计算机在读学生</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-gamepad"></i>
+                            <span class="lang-text" data-zh="兴趣：CS程序设计；AI与机器学习；高等数学与数学分析；计算机视觉" data-en="Interests: CS programming; AI and machine learning; Advanced Mathematics and Mathematical Analysis; Computer Vision">兴趣：CS程序设计；AI与机器学习；高等数学与数学分析；计算机视觉</span>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="showDetailedInfo()">
+                            <span class="lang-text" data-zh="进一步了解我" data-en="Learn More About Me">进一步了解我</span>
+                        </button>
+                        <button class="btn btn-secondary" onclick="showProfessionalInfo()">
+                            <span class="lang-text" data-zh="教授和HR点击" data-en="For Professors & HR">教授和HR点击</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 教育经历 -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="lang-text" data-zh="教育经历" data-en="Education">教育经历</span>
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="lang-text" data-zh="计算机科学专业" data-en="Computer Science Major">计算机科学专业</h3>
+                        <p class="lang-text" data-zh="本科在读 | 2022 - 至今" data-en="Undergraduate | 2022 - Present">本科在读 | 2022 - 至今</p>
+                        <p class="lang-text" data-zh="专注于软件开发、数据结构与算法学习" data-en="Focusing on software development, data structures and algorithms">专注于软件开发、数据结构与算法学习</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 最近在忙的事项 -->
+    <section id="current" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="lang-text" data-zh="最近在忙的事项" data-en="Current Focus">最近在忙的事项</span>
+            </h2>
+            <div class="current-focus-box">
+                <div class="focus-content">
+                    <div class="lang-content" data-lang="zh">
+                        <h3>🎯 当前专注</h3>
+                        <p>正在深入学习前端开发技术，包括HTML5、CSS3、JavaScript和React框架。同时准备计算机科学相关的课程项目。</p>
+                        <h3>📚 学习目标</h3>
+                        <p>计划在本学期完成数据结构与算法课程，并开发一个完整的Web应用程序作为个人项目。</p>
+                        <h3>🎮 业余时间</h3>
+                        <p>享受各种类型的游戏，特别是策略游戏和RPG。游戏不仅是娱乐，也是我学习用户体验设计的灵感来源。</p>
+                    </div>
+                    <div class="lang-content" data-lang="en" style="display: none;">
+                        <h3>🎯 Current Focus</h3>
+                        <p>Deeply learning front-end development technologies, including HTML5, CSS3, JavaScript, and React framework. Also preparing for computer science course projects.</p>
+                        <h3>📚 Learning Goals</h3>
+                        <p>Planning to complete Data Structures and Algorithms course this semester and develop a complete web application as a personal project.</p>
+                        <h3>🎮 Leisure Time</h3>
+                        <p>Enjoying various types of games, especially strategy games and RPGs. Gaming is not only entertainment but also a source of inspiration for learning user experience design.</p>
+                    </div>
+                </div>
+                <div class="edit-indicator">
+                    <i class="fas fa-lock"></i>
+                    <span class="lang-text" data-zh="仅本人可编辑" data-en="Owner Only Edit">仅本人可编辑</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目展示 -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="lang-text" data-zh="项目展示" data-en="Projects">项目展示</span>
+            </h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-globe-asia"></i>
+                    </div>
+                    <h3 class="lang-text" data-zh="个人网站" data-en="Personal Website">个人网站</h3>
+                    <p class="lang-text" data-zh="使用HTML、CSS、JavaScript构建的响应式个人主页" data-en="Responsive personal homepage built with HTML, CSS, JavaScript">使用HTML、CSS、JavaScript构建的响应式个人主页</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3 class="lang-text" data-zh="算法练习项目" data-en="Algorithm Practice">算法练习项目</h3>
+                    <p class="lang-text" data-zh="数据结构与算法的实现和练习集合" data-en="Collection of data structures and algorithms implementations">数据结构与算法的实现和练习集合</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">C++</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学习笔记 -->
+    <section id="notes" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="lang-text" data-zh="学习笔记" data-en="Study Notes">学习笔记</span>
+            </h2>
+            <div class="notes-grid">
+                <div class="note-card">
+                    <div class="note-header">
+                        <i class="fas fa-code"></i>
+                        <span class="lang-text" data-zh="JavaScript进阶" data-en="Advanced JavaScript">JavaScript进阶</span>
+                    </div>
+                    <p class="lang-text" data-zh="深入理解异步编程、闭包和原型链" data-en="Deep dive into asynchronous programming, closures and prototype chain">深入理解异步编程、闭包和原型链</p>
+                    <div class="note-date">2024-12-15</div>
+                </div>
+                <div class="note-card">
+                    <div class="note-header">
+                        <i class="fas fa-database"></i>
+                        <span class="lang-text" data-zh="数据结构" data-en="Data Structures">数据结构</span>
+                    </div>
+                    <p class="lang-text" data-zh="树、图、哈希表的实现与应用" data-en="Implementation and applications of trees, graphs, and hash tables">树、图、哈希表的实现与应用</p>
+                    <div class="note-date">2024-12-10</div>
+                </div>
+                <div class="note-card">
+                    <div class="note-header">
+                        <i class="fas fa-paint-brush"></i>
+                        <span class="lang-text" data-zh="UI设计原则" data-en="UI Design Principles">UI设计原则</span>
+                    </div>
+                    <p class="lang-text" data-zh="现代Web设计的最佳实践和用户体验" data-en="Best practices in modern web design and user experience">现代Web设计的最佳实践和用户体验</p>
+                    <div class="note-date">2024-12-08</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 个人动态 -->
+    <section id="posts" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="lang-text" data-zh="个人动态" data-en="Posts">个人动态</span>
+            </h2>
+            <div class="posts-container">
+                <div class="post-card">
+                    <div class="post-header">
+                        <div class="post-author">
+                            <img src="avatar.jpg" alt="William" class="post-avatar">
+                            <div class="post-info">
+                                <h4>William Shelton</h4>
+                                <span class="post-date">2024-12-20</span>
+                            </div>
+                        </div>
+                        <div class="post-lock">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <div class="lang-content" data-lang="zh">
+                            <p>今天完成了一个有趣的JavaScript项目！学会了如何使用异步函数处理API调用，感觉前端开发的世界真的很精彩。接下来准备深入学习React框架。 #编程学习 #前端开发</p>
+                        </div>
+                        <div class="lang-content" data-lang="en" style="display: none;">
+                            <p>Completed an interesting JavaScript project today! Learned how to use async functions for API calls, the world of front-end development is truly fascinating. Next, I'm planning to dive deep into React framework. #Programming #FrontEndDev</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-card">
+                    <div class="post-header">
+                        <div class="post-author">
+                            <img src="avatar.jpg" alt="William" class="post-avatar">
+                            <div class="post-info">
+                                <h4>William Shelton</h4>
+                                <span class="post-date">2024-12-18</span>
+                            </div>
+                        </div>
+                        <div class="post-lock">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <div class="lang-content" data-lang="zh">
+                            <p>周末玩了一款新的策略游戏，游戏的UI设计给了我很多灵感。作为计算机专业的学生，我发现游戏不仅仅是娱乐，更是学习用户体验设计的绝佳教材。 #游戏 #UX设计</p>
+                        </div>
+                        <div class="lang-content" data-lang="en" style="display: none;">
+                            <p>Played a new strategy game over the weekend, and the UI design gave me lots of inspiration. As a computer science student, I find that games are not just entertainment, but excellent textbooks for learning UX design. #Gaming #UXDesign</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 模态框 - 详细信息 -->
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="lang-text" data-zh="关于我的更多信息" data-en="More About Me">关于我的更多信息</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="lang-content" data-lang="zh">
+                    <p>你好！我是William Shelton，一名充满热情的计算机科学专业学生。</p>
+                    <h3>🎮 我的兴趣</h3>
+                    <p>游戏是我生活中不可缺少的一部分。我喜欢各种类型的游戏，从策略游戏到RPG，每一款游戏都能给我带来不同的体验和思考。作为一名程序员，我也经常分析游戏的机制和用户界面设计。</p>
+                    <h3>💻 编程之路</h3>
+                    <p>目前主要学习前端开发技术，包括HTML、CSS、JavaScript等。我相信技术能够改变世界，希望通过我的代码创造出有价值的产品。</p>
+                    <h3>🎯 未来目标</h3>
+                    <p>希望成为一名全栈开发工程师，能够独立完成从前端到后端的完整项目开发。</p>
+                </div>
+                <div class="lang-content" data-lang="en" style="display: none;">
+                    <p>Hello! I'm William Shelton, a passionate computer science student.</p>
+                    <h3>🎮 My Interests</h3>
+                    <p>Gaming is an indispensable part of my life. I enjoy various types of games, from strategy games to RPGs, each game brings me different experiences and thoughts. As a programmer, I often analyze game mechanics and user interface design.</p>
+                    <h3>💻 Programming Journey</h3>
+                    <p>Currently mainly learning front-end development technologies, including HTML, CSS, JavaScript, etc. I believe technology can change the world, and I hope to create valuable products through my code.</p>
+                    <h3>🎯 Future Goals</h3>
+                    <p>I hope to become a full-stack developer who can independently complete complete project development from front-end to back-end.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态框 - 专业信息 -->
+    <div id="professionalModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="lang-text" data-zh="专业信息" data-en="Professional Information">专业信息</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="lang-content" data-lang="zh">
+                    <h3>📚 学术背景</h3>
+                    <p>计算机科学专业本科在读学生，专注于软件工程和前端开发方向。具备扎实的编程基础和良好的学习能力。</p>
+                    <h3>💼 技能特长</h3>
+                    <ul>
+                        <li>前端开发：HTML5, CSS3, JavaScript, React</li>
+                        <li>编程语言：Python, Java, C++</li>
+                        <li>开发工具：Git, VS Code, IntelliJ IDEA</li>
+                        <li>数据结构与算法基础扎实</li>
+                    </ul>
+                    <h3>🎯 求职意向</h3>
+                    <p>寻找前端开发或软件工程相关的实习机会，希望在实际项目中提升自己的专业技能。</p>
+                    <h3>📞 联系方式</h3>
+                    <p>如需了解更多信息或讨论合作机会，欢迎通过GitHub与我联系。</p>
+                </div>
+                <div class="lang-content" data-lang="en" style="display: none;">
+                    <h3>📚 Academic Background</h3>
+                    <p>Undergraduate student majoring in Computer Science, focusing on software engineering and front-end development. Possess solid programming foundation and excellent learning ability.</p>
+                    <h3>💼 Technical Skills</h3>
+                    <ul>
+                        <li>Front-end Development: HTML5, CSS3, JavaScript, React</li>
+                        <li>Programming Languages: Python, Java, C++</li>
+                        <li>Development Tools: Git, VS Code, IntelliJ IDEA</li>
+                        <li>Solid foundation in Data Structures and Algorithms</li>
+                    </ul>
+                    <h3>🎯 Career Intentions</h3>
+                    <p>Seeking internship opportunities in front-end development or software engineering, hoping to improve professional skills in real projects.</p>
+                    <h3>📞 Contact</h3>
+                    <p>For more information or to discuss collaboration opportunities, please feel free to contact me through GitHub.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 WILLIAM SHELTON. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://github.com" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
