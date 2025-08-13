@@ -1,127 +1,129 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>William Shelton - Personal Homepage</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>William Shelton</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="lang-en">
+  <div class="container">
     <header>
-        <div class="language-toggle">
-            <input type="checkbox" id="lang-toggle" />
-            <label for="lang-toggle">
-                <span class="en">Switch to Chinese</span>
-                <span class="zh">切换到英文</span>
-            </label>
-        </div>
+      <span class="name lang-en">William·Shelton</span>
+      <span class="name lang-zh">William Shelton</span>
+      <button id="lang-switcher">中文 / English</button>
+      <nav>
+        <ul>
+          <li><a href="#about" class="lang-en">About</a><a href="#about" class="lang-zh">关于</a></li>
+          <li><a href="#projects" class="lang-en">Projects</a><a href="#projects" class="lang-zh">项目</a></li>
+          <li><a href="#education" class="lang-en">Education</a><a href="#education" class="lang-zh">教育</a></li>
+          <li><a href="#blog" class="lang-en">Blog</a><a href="#blog" class="lang-zh">博客</a></li>
+        </ul>
+      </nav>
     </header>
-    
-    <main class="content">
-        <!-- Personal Information -->
-        <section id="personal-info">
-            <div class="avatar-container">
-                <img src="avatar.jpg" alt="William Shelton's Avatar" class="avatar">
-            </div>
-            <div class="basic-info">
-                <h1 class="en">William Shelton</h1>
-                <h1 class="zh">威廉·谢尔顿</h1>
-                <p class="en">Gender: Male</p>
-                <p class="zh">性别：男</p>
-                <p class="en">Occupation: Computer Science Student</p>
-                <p class="zh">职业：计算机在读学生</p>
-                <p class="en">Interests: Computer Programming, Mathematics and Applied Mathematics, AI and Machine Learning, Computer Vision</p>
-                <p class="zh">兴趣点：计算机程序设计，数学与应用数学，AI与机器学习，计算机视觉</p>
-            </div>
-            <div class="buttons">
-                <a href="person/more-about-me.html" class="button en">Learn More About Me</a>
-                <a href="person/more-about-me.html" class="button zh">进一步了解我</a>
-                <a href="person/for-prof-hr.html" class="button en">For Professors and HR</a>
-                <a href="person/for-prof-hr.html" class="button zh">教授和HR点击</a>
-            </div>
-        </section>
-        
-        <!-- Education Experience -->
-        <section id="education">
-            <h2 class="en">Education Experience</h2>
-            <h2 class="zh">教育经历</h2>
-            <!-- Add your education details here, e.g., -->
-            <ul class="en">
-                <li>Bachelor's in Computer Science, University XYZ (2020 - Present)</li>
-            </ul>
-            <ul class="zh">
-                <li>计算机科学学士，XYZ大学（2020 - 至今）</li>
-            </ul>
-        </section>
-        
-        <!-- Current Activities -->
-        <section id="current-activities">
-            <h2 class="en">What I'm Currently Working On</h2>
-            <h2 class="zh">最近在忙的事项</h2>
-            <div class="activity-box">
-                <p class="en">Developing a personal AI project and studying advanced machine learning algorithms.</p>
-                <p class="zh">开发个人AI项目并学习高级机器学习算法。</p>
-            </div>
-        </section>
-        
-        <!-- Projects Showcase -->
-        <section id="projects">
-            <h2 class="en">Project Showcase</h2>
-            <h2 class="zh">项目展示</h2>
-            <div class="project-item">
-                <h3 class="en">Project 1: AI Image Recognizer</h3>
-                <h3 class="zh">项目1：AI图像识别器</h3>
-                <p class="en">A machine learning model for image classification using TensorFlow.</p>
-                <p class="zh">使用TensorFlow的图像分类机器学习模型。</p>
-            </div>
-            <div class="project-item">
-                <h3 class="en">Project 2: Math Solver App</h3>
-                <h3 class="zh">项目2：数学求解器应用</h3>
-                <p class="en">An application that solves mathematical equations with step-by-step explanations.</p>
-                <p class="zh">一个提供逐步解释的数学方程求解应用。</p>
-            </div>
-        </section>
-        
-        <!-- Learning Notes -->
-        <section id="notes">
-            <h2 class="en">Learning Notes</h2>
-            <h2 class="zh">学习笔记</h2>
-            <div class="note-item">
-                <h3 class="en">Note 1: Introduction to Neural Networks</h3>
-                <h3 class="zh">笔记1：神经网络简介</h3>
-                <p class="en">Key concepts: Neurons, layers, activation functions.</p>
-                <p class="zh">关键概念：神经元、层、激活函数。</p>
-            </div>
-            <div class="note-item">
-                <h3 class="en">Note 2: Linear Algebra Basics</h3>
-                <h3 class="zh">笔记2：线性代数基础</h3>
-                <p class="en">Matrices, vectors, eigenvalues.</p>
-                <p class="zh">矩阵、向量、特征值。</p>
-            </div>
-        </section>
-        
-        <!-- Posts Area -->
-        <section id="posts">
-            <h2 class="en">My Posts</h2>
-            <h2 class="zh">我的帖子区</h2>
-            <div class="post-item">
-                <h3 class="en">Post 1: Thoughts on AI Ethics</h3>
-                <h3 class="zh">帖子1：AI伦理思考</h3>
-                <p class="en">Discussing the importance of ethical considerations in AI development.</p>
-                <p class="zh">讨论AI开发中伦理考虑的重要性。</p>
-            </div>
-            <div class="post-item">
-                <h3 class="en">Post 2: Recent Math Discoveries</h3>
-                <h3 class="zh">帖子2：最近数学发现</h3>
-                <p class="en">Exploring new applications of calculus in machine learning.</p>
-                <p class="zh">探索微积分在机器学习中的新应用。</p>
-            </div>
-        </section>
-    </main>
-    
+
+    <section id="about">
+      <h2 class="lang-en">About Me</h2>
+      <h2 class="lang-zh">关于我</h2>
+      <div class="intro">
+        <div class="intro-text">
+          <p class="lang-en"><strong>Occupation:</strong> Student in CS</p>
+          <p class="lang-zh"><strong>职业：</strong>在读计算机系学生</p>
+          <p class="lang-en"><strong>Interests:</strong> Computer software, programming; Machine learning and AI, computer vision; Mathematics</p>
+          <p class="lang-zh">😚<strong>兴趣点：</strong>计算机软件，程序设计；机器学习与AI，计算机视觉；数学</p>
+          <p class="lang-en">Seize the day and night, joy knows no bounds; Through hardships and trials, you’re ultimately honed to bloom.</p>
+          <p class="lang-zh">只争朝夕，其乐无穷；艰难困苦，玉汝于成</p>
+          <a href="person/about.html" class="button lang-en">Learn More</a>
+          <a href="person/hr.html" class="button lang-en">For HR & Professor</a>
+          <a href="person/about.html" class="button lang-zh">了解更多</a>
+          <a href="person/hr.html" class="button lang-zh">为HR与教授</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="lang-en">Projects 📂</h2>
+      <h2 class="lang-zh">项目展示 📂</h2>
+      <div class="projects-container">
+        <div class="project-card">
+          <h3 class="lang-en">Project One</h3>
+          <h3 class="lang-zh">项目一</h3>
+          <p class="lang-en">LaTeX template for math notes.</p>
+          <p class="lang-zh">数学笔记的Latex模板。</p>
+          <a href="#" class="project-link lang-en">download-MATnotes latextemplate</a>
+          <a href="#" class="project-link lang-zh">下载-MAT笔记Latex模板</a>
+        </div>
+        <div class="project-card">
+          <h3 class="lang-en">Project two</h3>
+          <h3 class="lang-zh">项目二</h3>
+          <p class="lang-en">Simple Java Remote Communication Program</p>
+          <p class="lang-zh">Java简易的远程通讯程序</p>
+          <a href="#" class="project-link lang-en">download-Java project</a>
+          <a href="#" class="project-link lang-zh">下载-Java项目</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2 class="lang-en">Education 🌐</h2>
+      <h2 class="lang-zh">教育经历 🌐</h2>
+      <ul class="education-list">
+        <li>
+          <span class="education-time">2018 - 2021 - 2024</span>
+          <span class="education-info lang-en">Yuyao Experimental School in Zhejiang Province → Zhejiang Zhenhai High School · High School</span>
+          <span class="education-info lang-zh">浙江省余姚实验学校→浙江省镇海中学 · 初/高中学</span>
+        </li>
+        <li>
+          <span class="education-time">2024 - now</span>
+          <span class="education-info lang-en">The Chinese University of Hong Kong, Shenzhen · Undergraduate</span>
+          <span class="education-info lang-zh">香港中文大学（深圳） · 本科</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="recent-updates">
+      <h2 class="lang-en">Recent Updates</h2>
+      <h2 class="lang-zh">最近动态</h2>
+      <div class="recent-updates">
+        <div class="update-post">
+          <p class="lang-en">Update 1: Recently started a new course on AI.</p>
+          <p class="lang-zh">更新1：最近开始了一门AI课程。</p>
+        </div>
+        <div class="update-post">
+          <p class="lang-en">Update 2: Participated in a hackathon.</p>
+          <p class="lang-zh">更新2：参加了黑客马拉松。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog">
+      <h2 class="lang-en">Blog</h2>
+      <h2 class="lang-zh">博客</h2>
+      <div class="blog-post">
+        <h3 class="lang-en">Post-1 Hello World!</h3>
+        <h3 class="lang-zh">帖子1 Hello World!</h3>
+        <p class="lang-en">This is the first cry of my GitHub web page: HelloWorld!</p>
+        <p class="lang-zh">这是我的github网页的第一声啼哭：HelloWorld！</p>
+      </div>
+      <div class="blog-post">
+        <h3 class="lang-en">Post Title 2</h3>
+        <h3 class="lang-zh">帖子标题 2</h3>
+        <p class="lang-en">This is another summary of the blog post. It can be updated via Markdown or HTML.</p>
+        <p class="lang-zh">这是另一篇博客帖子的摘要。它可以通过Markdown或HTML进行更新。</p>
+      </div>
+    </section>
+
     <footer>
-        <p>Copyright © William Shelton</p>
+      <p class="lang-en">© 2025 William Shelton. All rights reserved.</p>
+      <p class="lang-zh">© 2025 William Shelton。保留所有权利。</p>
     </footer>
+  </div>
+
+  <script>
+    document.getElementById('lang-switcher').addEventListener('click', function() {
+      document.body.classList.toggle('lang-en');
+      document.body.classList.toggle('lang-zh');
+    });
+  </script>
 </body>
 </html>
