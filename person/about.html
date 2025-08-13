@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>William Shelton | 个人主页</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        // 配置Tailwind主题色
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8EC56C',     // 浅绿色
+                        secondary: '#FF9F1C',   // 橘黄色
+                        neutral: '#F7F9F7',     // 浅灰底色
+                        dark: '#333333'         // 深色文字
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif', 'PingFang SC', 'Microsoft YaHei'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            }
+            .flowing-bg {
+                background: linear-gradient(135deg, #8EC56C10, #FF9F1C10);
+                background-size: 400% 400%;
+                animation: gradient 15s ease infinite;
+            }
+            .hover-lift {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .hover-lift:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            }
+            .slide-in {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+            .slide-in.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .lang-btn {
+                position: relative;
+                overflow: hidden;
+                transition: color 0.3s ease;
+            }
+            .lang-btn::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: currentColor;
+                transition: width 0.3s ease;
+            }
+            .lang-btn:hover::after,
+            .lang-btn.active::after {
+                width: 100%;
+            }
+            .contact-qrcode {
+                transition: all 0.3s ease;
+                opacity: 0;
+                transform: scale(0.9);
+                pointer-events: none;
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%) scale(0.9);
+                margin-bottom: 10px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .contact-item:hover .contact-qrcode {
+                opacity: 1;
+                transform: translateX(-50%) scale(1);
+                pointer-events: auto;
+            }
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .float-delay {
+            animation: float 6s ease-in-out 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark font-sans antialiased">
+    <!-- 导航栏 -->
+    <nav class="fixed w-full bg-white/80 backdrop-blur-sm z-50 transition-all duration-300 shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-semibold text-primary">William</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-primary transition-colors" data-i18n="nav.about">About</a>
+                <a href="#locations" class="hover:text-primary transition-colors" data-i18n="nav.locations">Locations</a>
+                <a href="#contact" class="hover:text-primary transition-colors" data-i18n="nav.contact">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="en-btn" class="lang-btn active text-sm font-medium" data-lang="en">EN</button>
+                <button id="zh-btn" class="lang-btn text-sm font-medium" data-lang="zh">中</button>
+                <button class="md:hidden text-xl">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区 -->
+    <header class="min-h-screen flex items-center justify-center flowing-bg pt-16 overflow-hidden">
+        <div class="container mx-auto px-4 py-20 text-center">
+            <div class="relative inline-block">
+                <div class="absolute -top-10 -left-10 w-20 h-20 bg-primary/20 rounded-full blur-xl float"></div>
+                <div class="absolute -bottom-10 -right-10 w-20 h-20 bg-secondary/20 rounded-full blur-xl float-delay"></div>
+                
+                <h1 class="text-[clamp(2.5rem,8vw,5rem)] font-light leading-tight mb-6">
+                    <span class="block font-normal">William</span>
+                    <span class="block font-medium text-primary">Shelton</span>
+                </h1>
+                
+                <p class="text-[clamp(1rem,3vw,1.5rem)] text-gray-600 max-w-2xl mx-auto" data-i18n="hero.subtitle">
+                    A minimalist soul with roots in the East and wings across continents
+                </p>
+            </div>
+            
+            <div class="mt-16 animate-bounce">
+                <a href="#about" class="text-primary/70 hover:text-primary transition-colors">
+                    <i class="fa fa-angle-down text-3xl"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 关于我 -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-[clamp(1.5rem,5vw,3rem)] font-light mb-12 text-center slide-in" data-i18n="about.title">About Me</h2>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="slide-in">
+                        <div class="relative">
+                            <div class="aspect-square max-w-sm mx-auto rounded-2xl overflow-hidden shadow-lg">
+                                <div class="w-full h-full bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
+                                    <!-- 个人照片占位 -->
+                                    <i class="fa fa-user text-6xl text-primary/30"></i>
+                                </div>
+                            </div>
+                            <div class="absolute -bottom-4 -right-4 w-24 h-24 border-4 border-white rounded-full overflow-hidden shadow-md">
+                                <div class="w-full h-full bg-secondary/20 flex items-center justify-center">
+                                    <i class="fa fa-globe text-2xl text-secondary/50"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6 slide-in">
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-500 mb-2" data-i18n="about.basicInfo">Basic Info</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <span class="w-24 text-gray-500" data-i18n="about.name">Name</span>
+                                    <span class="font-medium">William Shelton</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-24 text-gray-500" data-i18n="about.gender">Gender</span>
+                                    <span data-i18n="about.male">Male</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-24 text-gray-500" data-i18n="about.hometown">Hometown</span>
+                                    <span>Zhejiang, China</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-500 mb-2" data-i18n="about.description">About</h3>
+                            <p class="text-gray-600 leading-relaxed" data-i18n="about.bio">
+                                A curious explorer who finds beauty in simplicity. I split my time between different corners of the world, drawing inspiration from diverse cultures and landscapes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 所在地 -->
+    <section id="locations" class="py-20 flowing-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-[clamp(1.5rem,5vw,3rem)] font-light mb-16 text-center slide-in" data-i18n="locations.title">Where I Am</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- 香港 -->
+                <div class="bg-white rounded-xl p-6 shadow-sm hover-lift slide-in">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-map-marker text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-medium mb-3">Hong Kong, China</h3>
+                    <p class="text-gray-600" data-i18n="locations.hongkong">
+                        The vibrant energy of this city where east meets west inspires my creative pursuits.
+                    </p>
+                </div>
+                
+                <!-- 柏林 -->
+                <div class="bg-white rounded-xl p-6 shadow-sm hover-lift slide-in">
+                    <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-map-marker text-2xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-medium mb-3">Berlin, Germany</h3>
+                    <p class="text-gray-600" data-i18n="locations.berlin">
+                        The rich history and contemporary art scene here fuel my intellectual curiosity.
+                    </p>
+                </div>
+                
+                <!-- 新加坡 -->
+                <div class="bg-white rounded-xl p-6 shadow-sm hover-lift slide-in">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-map-marker text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-medium mb-3">Singapore</h3>
+                    <p class="text-gray-600" data-i18n="locations.singapore">
+                        The tropical climate and multicultural environment provide a unique perspective.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系信息 -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-[clamp(1.5rem,5vw,3rem)] font-light mb-16 text-center slide-in" data-i18n="contact.title">Get In Touch</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- 邮箱 -->
+                    <div class="text-center p-6 slide-in">
+                        <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fa fa-envelope text-2xl text-secondary"></i>
+                        </div>
+                        <h3 class="text-xl font-medium mb-3" data-i18n="contact.email">Email</h3>
+                        <p class="text-gray-600" data-i18n="contact.emailHidden">嘻嘻保密</p>
+                    </div>
+                    
+                    <!-- B站 -->
+                    <div class="text-center p-6 slide-in">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <!-- B站图标 -->
+                            <img src="https://p1.hicloud.com/topic/1280x720/b04f759184.png" alt="B站" class="w-10 h-10 object-contain">
+                        </div>
+                        <h3 class="text-xl font-medium mb-3" data-i18n="contact.bilibili">Bilibili</h3>
+                        <p class="text-gray-600">@WilliamShelton</p>
+                    </div>
+                    
+                    <!-- QQ -->
+                    <div class="text-center p-6 slide-in contact-item relative">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fa fa-qq text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-medium mb-3" data-i18n="contact.qq">QQ</h3>
+                        <p class="text-gray-600" data-i18n="contact.qqHint">Hover to view QR</p>
+                        <!-- QQ二维码（悬停显示） -->
+                        <div class="contact-qrcode">
+                            <img src="https://picsum.photos/200/200" alt="QQ QR Code" class="w-40 h-40 object-cover">
+                        </div>
+                    </div>
+                    
+                    <!-- 微信 -->
+                    <div class="text-center p-6 slide-in contact-item relative">
+                        <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+                            <i class="fa fa-weixin text-2xl text-secondary"></i>
+                        </div>
+                        <h3 class="text-xl font-medium mb-3" data-i18n="contact.wechat">WeChat</h3>
+                        <p class="text-gray-600" data-i18n="contact.wechatHint">Hover to view QR</p>
+                        <!-- 微信二维码（悬停显示） -->
+                        <div class="contact-qrcode">
+                            <img src="https://picsum.photos/200/200?random=2" alt="WeChat QR Code" class="w-40 h-40 object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-500" data-i18n="footer.copyright">© 2023 William Shelton. All rights reserved.</p>
+            <p class="text-gray-400 text-sm mt-2" data-i18n="footer.design">Designed with simplicity in mind</p>
+        </div>
+    </footer>
+
+    <script>
+        // 语言包
+        const translations = {
+            en: {
+                "nav.about": "About",
+                "nav.locations": "Locations",
+                "nav.contact": "Contact",
+                "hero.subtitle": "Every day without dancing is a betrayal of life. —— Nietzsche",
+                "about.title": "About Me",
+                "about.basicInfo": "Basic Info",
+                "about.name": "Name",
+                "about.gender": "Gender",
+                "about.male": "Male",
+                "about.hometown": "Hometown",
+                "about.description": "About",
+                "about.bio": "Ningbo → Shenzhen",
+                "locations.title": "Where I Am",
+                "locations.hongkong": "Come with me to feel the sea breeze of Victoria Harbour, and take a look at Hong Kong, the Oriental Pearl and the financial and economic center of Asia, as well as Shenzhen, a highland of scientific and technological innovation and a vibrant young city.",
+                "locations.berlin": "The rich history and contemporary art scene here fuel my intellectual curiosity.",
+                "locations.singapore": "The tropical climate and multicultural environment provide a unique perspective.",
+                "contact.title": "Get In Touch",
+                "contact.email": "Email",
+                "contact.emailHidden": "嘻嘻保密",
+                "contact.bilibili": "Bilibili",
+                "contact.qq": "QQ",
+                "contact.qqHint": " id：1756422676 or viewing the QR",
+                "contact.wechat": "WeChat",
+                "contact.wechatHint": "id：winterlingWu or viewing the QR",
+                "footer.copyright": "© 2025 William Shelton. All rights reserved.",
+                "footer.design": "Talk is cheap, show me your CODE!"
+            },
+            zh: {
+                "nav.about": "关于我",
+                "nav.locations": "所在地",
+                "nav.contact": "联系方式",
+                "hero.subtitle": "每个不曾起舞的日子都是对生命的辜负——尼采",
+                "about.title": "关于我",
+                "about.basicInfo": "基本信息",
+                "about.name": "姓名",
+                "about.gender": "性别",
+                "about.male": "男",
+                "about.hometown": "家乡",
+                "about.description": "简介",
+                "about.bio": "宁波→深圳",
+                "locations.title": "我所在的地方",
+                "locations.hongkong": "和我来吹吹维多利亚港的海风，看看香港这一东方明珠，亚洲金融经济中心与深圳这一科技创新的高地，年轻旺盛的城市",
+                "locations.berlin": "这里丰富的历史和当代艺术场景，满足着我的求知欲。",
+                "locations.singapore": "热带气候和多元文化环境提供了独特的视角。",
+                "contact.title": "联系我",
+                "contact.email": "邮箱",
+                "contact.emailHidden": "嘻嘻保密",
+                "contact.bilibili": "哔哩哔哩",
+                "contact.qq": "QQ",
+                "contact.qqHint": " id：1756422676 或者查看二维码",
+                "contact.wechat": "微信",
+                "contact.wechatHint": "id：winterlingWu 或查看二维码",
+                "footer.copyright": "© 2025 William Shelton. 保留所有权利。",
+                "footer.design": "Talk is cheap, show me your CODE!"
+            }
+        };
+
+        // 切换语言函数
+        function setLanguage(lang) {
+            // 更新语言按钮状态
+            document.getElementById('en-btn').classList.remove('active');
+            document.getElementById('zh-btn').classList.remove('active');
+            document.getElementById(`${lang}-btn`).classList.add('active');
+            
+            // 翻译页面内容
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+        }
+
+        // 滚动动画
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化语言为英文
+            setLanguage('en');
+            
+            // 语言切换事件
+            document.getElementById('en-btn').addEventListener('click', () => setLanguage('en'));
+            document.getElementById('zh-btn').addEventListener('click', () => setLanguage('zh'));
+            
+            // 检测元素是否在视口中
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8
+                );
+            }
+            
+            // 添加滚动动画类
+            function handleScrollAnimation() {
+                const elements = document.querySelectorAll('.slide-in');
+                elements.forEach(element => {
+                    if (isInViewport(element) && !element.classList.contains('active')) {
+                        element.classList.add('active');
+                    }
+                });
+            }
+            
+            // 导航栏滚动效果
+            function handleNavScroll() {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 100) {
+                    nav.classList.add('py-2', 'shadow');
+                    nav.classList.remove('py-4');
+                } else {
+                    nav.classList.add('py-4');
+                    nav.classList.remove('py-2', 'shadow');
+                }
+            }
+            
+            // 初始检查
+            handleScrollAnimation();
+            handleNavScroll();
+            
+            // 滚动时检查
+            window.addEventListener('scroll', function() {
+                handleScrollAnimation();
+                handleNavScroll();
+            });
+            
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
