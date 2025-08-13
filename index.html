@@ -1,236 +1,127 @@
-<!doctype html>
+<!-- index.html -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>William Shelton — 个人主页</title>
-  <meta name="description" content="William Shelton — 个人主页 (中英双语)" />
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>William Shelton - Personal Homepage</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <!-- LANGUAGE & MENU CONTROLS (pure HTML/CSS; no JavaScript) -->
-  <!-- Radio buttons for language selection (placed before main so CSS selectors can target main) -->
-  <input type="radio" name="site-lang" id="lang-en" checked class="visually-hidden">
-  <input type="radio" name="site-lang" id="lang-zh" class="visually-hidden">
-
-  <!-- Checkbox for mobile menu toggle -->
-  <input type="checkbox" id="menu-open" class="visually-hidden">
-
-  <header class="site-header" role="banner">
-    <div class="brand">
-      <div class="logo" aria-hidden="true"></div>
-      <h1 class="site-title">
-        <span data-lang="en">William Shelton</span>
-        <span data-lang="zh">William Shelton</span>
-      </h1>
-    </div>
-
-    <nav class="top-controls" aria-label="Top controls">
-      <div class="lang-switch" role="tablist" aria-label="Language switch">
-        <label for="lang-en" class="lang-btn" role="button" aria-pressed="true">EN</label>
-        <label for="lang-zh" class="lang-btn" role="button" aria-pressed="false">中文</label>
-      </div>
-
-      <!-- mobile menu button -->
-      <label for="menu-open" id="menu-toggle" class="menu-toggle" aria-controls="main-nav" role="button">☰</label>
-    </nav>
-  </header>
-
-  <main id="site-main">
-    <aside class="sidebar" id="main-nav" role="navigation" aria-label="Main sections">
-      <ul>
-        <li><a href="#profile" data-lang-ignore>Profile / 个人</a></li>
-        <li><a href="#education" data-lang-ignore>Education / 教育经历</a></li>
-        <li><a href="#busy" data-lang-ignore>Busy / 最近在忙</a></li>
-        <li><a href="#projects" data-lang-ignore>Projects / 项目展示</a></li>
-        <li><a href="#notes" data-lang-ignore>Notes / 学习笔记</a></li>
-        <li><a href="#posts" data-lang-ignore>Posts / 帖子</a></li>
-      </ul>
-    </aside>
-
-    <section class="content">
-      <!-- Profile -->
-      <section id="profile" class="card">
-        <div class="profile-grid">
-          <img src="avatar.jpg" alt="Avatar of William Shelton" class="avatar" />
-          <div class="profile-info">
-            <h2>
-              <span data-lang="en">William · Shelton</span>
-              <span data-lang="zh">William Shelton</span>
-            </h2>
-            <p class="basic-info">
-              <span data-lang="en">Male • Computer student • Hobbies: coding &amp; math</span>
-              <span data-lang="zh">男 • 计算机在读学生 • 兴趣：编程 与 数学</span><br/>
-              <span data-lang="en">Interests: CS Programming; AI &amp; ML; Advanced Math; Computer Vision</span>
-              <span data-lang="zh">兴趣点：计算机程序设计；AI与机器学习；高等数学；计算机视觉</span>
-            </p>
-
-            <div class="profile-actions">
-              <!-- simple links to pages in person/ folder -->
-              <a href="person/about.html" class="btn" id="btn-learn" rel="noopener">
-                <span data-lang="en">Learn more</span>
-                <span data-lang="zh">进一步了解我</span>
-              </a>
-              <a href="person/hr.html" class="btn ghost" id="btn-hr" rel="noopener">
-                <span data-lang="en">For professors &amp; HR</span>
-                <span data-lang="zh">教授和HR点击</span>
-              </a>
+    <header>
+        <div class="language-toggle">
+            <input type="checkbox" id="lang-toggle" />
+            <label for="lang-toggle">
+                <span class="en">Switch to Chinese</span>
+                <span class="zh">切换到英文</span>
+            </label>
+        </div>
+    </header>
+    
+    <main class="content">
+        <!-- Personal Information -->
+        <section id="personal-info">
+            <div class="avatar-container">
+                <img src="avatar.jpg" alt="William Shelton's Avatar" class="avatar">
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Education -->
-      <section id="education" class="card">
-        <h3>
-          <span data-lang="en">Education</span>
-          <span data-lang="zh">教育经历</span>
-        </h3>
-        <div class="edu-list">
-          <article>
-            <h4>
-              <span data-lang="en">Yuyao Experimental School, Zhejiang Province · Junior Middle School</span>
-              <span data-lang="zh">浙江省余姚市实验学校 · 初中</span>
-            </h4>
-            <h4>
-              <span data-lang="en">Zhenhai High School, Zhejiang Province · Senior High School</span>
-              <span data-lang="zh">浙江省镇海中学 · 高中</span>
-            </h4>
-            <h4>
-              <span data-lang="en">The Chinese University of Hong Kong, Shenzhen · Undergraduate</span>
-              <span data-lang="zh">香港中文大学（深圳） · 本科</span>
-            </h4>
-            <p class="muted">
-              <span data-lang="en">Directions: physics/chem/politics (middle); engineering &amp; computer science (university).</span>
-              <span data-lang="zh">方向：中学阶段物理/化学/政治；大学阶段工学与计算机科学。</span>
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <!-- Busy -->
-      <section id="busy" class="card">
-        <h3><span data-lang="en">Currently working on</span><span data-lang="zh">最近在忙的事项</span></h3>
-
-        <div id="busy-content" class="safe-box" aria-live="polite">
-          <div class="example-item" data-example="1">
-            <div>
-              <strong>
-                <span data-lang="en">1) Polishing a webapp for my portfolio — Deadline: Aug 20, 2025.</span>
-                <span data-lang="zh">1）打磨个人作品集小型 Web 应用 — 截止：2025-08-20。</span>
-              </strong>
+            <div class="basic-info">
+                <h1 class="en">William Shelton</h1>
+                <h1 class="zh">威廉·谢尔顿</h1>
+                <p class="en">Gender: Male</p>
+                <p class="zh">性别：男</p>
+                <p class="en">Occupation: Computer Science Student</p>
+                <p class="zh">职业：计算机在读学生</p>
+                <p class="en">Interests: Computer Programming, Mathematics and Applied Mathematics, AI and Machine Learning, Computer Vision</p>
+                <p class="zh">兴趣点：计算机程序设计，数学与应用数学，AI与机器学习，计算机视觉</p>
             </div>
-            <div style="margin-top:6px;">
-              <span data-lang="en">Focus: responsive UI, bilingual support, secure static hosting.</span>
-              <span data-lang="zh">重点：响应式 UI、双语支持、以及安全的静态托管。</span>
+            <div class="buttons">
+                <a href="person/more-about-me.html" class="button en">Learn More About Me</a>
+                <a href="person/more-about-me.html" class="button zh">进一步了解我</a>
+                <a href="person/for-prof-hr.html" class="button en">For Professors and HR</a>
+                <a href="person/for-prof-hr.html" class="button zh">教授和HR点击</a>
             </div>
-          </div>
-
-          <div style="height:10px"></div>
-
-          <div class="example-item" data-example="2">
-            <div>
-              <strong>
-                <span data-lang="en">2) Reading papers on large models &amp; system design.</span>
-                <span data-lang="zh">2）研读关于大模型与系统设计的论文。</span>
-              </strong>
+        </section>
+        
+        <!-- Education Experience -->
+        <section id="education">
+            <h2 class="en">Education Experience</h2>
+            <h2 class="zh">教育经历</h2>
+            <!-- Add your education details here, e.g., -->
+            <ul class="en">
+                <li>Bachelor's in Computer Science, University XYZ (2020 - Present)</li>
+            </ul>
+            <ul class="zh">
+                <li>计算机科学学士，XYZ大学（2020 - 至今）</li>
+            </ul>
+        </section>
+        
+        <!-- Current Activities -->
+        <section id="current-activities">
+            <h2 class="en">What I'm Currently Working On</h2>
+            <h2 class="zh">最近在忙的事项</h2>
+            <div class="activity-box">
+                <p class="en">Developing a personal AI project and studying advanced machine learning algorithms.</p>
+                <p class="zh">开发个人AI项目并学习高级机器学习算法。</p>
             </div>
-            <div style="margin-top:6px;">
-              <span data-lang="en">Notes: summarize architectures and experiment setups for later posts.</span>
-              <span data-lang="zh">笔记：汇总架构与实验设置，便于后续发布。</span>
+        </section>
+        
+        <!-- Projects Showcase -->
+        <section id="projects">
+            <h2 class="en">Project Showcase</h2>
+            <h2 class="zh">项目展示</h2>
+            <div class="project-item">
+                <h3 class="en">Project 1: AI Image Recognizer</h3>
+                <h3 class="zh">项目1：AI图像识别器</h3>
+                <p class="en">A machine learning model for image classification using TensorFlow.</p>
+                <p class="zh">使用TensorFlow的图像分类机器学习模型。</p>
             </div>
-          </div>
-        </div>
-
-        <p class="muted small">
-          <span data-lang="en">Only editable by repository owner — stored in site source for safety.</span>
-          <span data-lang="zh">仅由所有者编辑 — 存储在站点源码以保证安全。</span>
-        </p>
-      </section>
-
-      <!-- Projects -->
-      <section id="projects" class="card">
-        <h3><span data-lang="en">Projects</span><span data-lang="zh">项目展示</span></h3>
-
-        <div id="projects-list" class="grid-cards">
-          <div class="project">
-            <h4><span data-lang="en">Portfolio Site</span><span data-lang="zh">个人主页</span></h4>
-            <p class="muted">
-              <span data-lang="en">A lightweight bilingual static site built with HTML/CSS. Focus on security and accessibility.</span>
-              <span data-lang="zh">一个轻量的中英双语静态站点，使用 HTML/CSS 构建，注重安全与可访问性。</span>
-            </p>
-          </div>
-
-          <div class="project">
-            <h4><span data-lang="en">Study Notes Hub</span><span data-lang="zh">学习笔记库</span></h4>
-            <p class="muted">
-              <span data-lang="en">Collection of concise notes on algorithms and systems; offline-friendly.</span>
-              <span data-lang="zh">关于算法与系统的简洁笔记集合，支持离线查看。</span>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Notes -->
-      <section id="notes" class="card">
-        <h3><span data-lang="en">Learning Notes</span><span data-lang="zh">学习笔记</span></h3>
-
-        <div id="notes-list" class="notes-list">
-          <div class="post">
-            <h4><span data-lang="en">B-Tree Summary</span><span data-lang="zh">B 树笔记</span></h4>
-            <p>
-              <span data-lang="en">Key points: node structure, insertion &amp; deletion sketches, I/O considerations.</span>
-              <span data-lang="zh">要点：结点结构、插入与删除要点，以及 I/O 考量。</span>
-            </p>
-          </div>
-
-          <div class="post">
-            <h4><span data-lang="en">Practical Systems Checklist</span><span data-lang="zh">系统调试清单</span></h4>
-            <p>
-              <span data-lang="en">Checklist for profiling, bottleneck analysis and reproducible experiments.</span>
-              <span data-lang="zh">性能剖析、瓶颈分析与可复现实验的检查清单。</span>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Posts -->
-      <section id="posts" class="card">
-        <h3><span data-lang="en">Posts</span><span data-lang="zh">我的帖子</span></h3>
-
-        <div id="posts-list" class="posts-list" aria-live="polite">
-          <article class="post">
-            <div class="muted small">2025-08-13</div>
-            <p>
-              <strong><span data-lang="en">First Public Post: Hello World</span><span data-lang="zh">第一条帖子：Hello World</span></strong><br/>
-              <span data-lang="en">Hello — welcome to my site. I'll share notes and project updates here.</span>
-              <span data-lang="zh">你好 — 欢迎来到我的主页。我会在这里分享笔记与项目进展。</span>
-            </p>
-          </article>
-
-          <article class="post">
-            <div class="muted small">2025-07-30</div>
-            <p>
-              <strong><span data-lang="en">Experiment Log: LLM Finetuning</span><span data-lang="zh">实验日志：大模型微调</span></strong><br/>
-              <span data-lang="en">Short log of experiments and hyperparameters for reproducibility.</span>
-              <span data-lang="zh">实验与超参数的简短记录，方便可复现。</span>
-            </p>
-          </article>
-        </div>
-
-        <p class="muted small">
-          <span data-lang="en">Visible to everyone. Only the owner may update via repo commits.</span>
-          <span data-lang="zh">所有人可见，只有 William 可通过提交更新内容。</span>
-        </p>
-      </section>
-
-      <footer class="site-footer">
-        <p class="copyright">© <strong>WILLIAM SHELTON 2025</strong></p>
-      </footer>
-    </section>
-  </main>
-
-  <!-- NOTE: No external JavaScript file. All controls work with HTML + CSS only. -->
+            <div class="project-item">
+                <h3 class="en">Project 2: Math Solver App</h3>
+                <h3 class="zh">项目2：数学求解器应用</h3>
+                <p class="en">An application that solves mathematical equations with step-by-step explanations.</p>
+                <p class="zh">一个提供逐步解释的数学方程求解应用。</p>
+            </div>
+        </section>
+        
+        <!-- Learning Notes -->
+        <section id="notes">
+            <h2 class="en">Learning Notes</h2>
+            <h2 class="zh">学习笔记</h2>
+            <div class="note-item">
+                <h3 class="en">Note 1: Introduction to Neural Networks</h3>
+                <h3 class="zh">笔记1：神经网络简介</h3>
+                <p class="en">Key concepts: Neurons, layers, activation functions.</p>
+                <p class="zh">关键概念：神经元、层、激活函数。</p>
+            </div>
+            <div class="note-item">
+                <h3 class="en">Note 2: Linear Algebra Basics</h3>
+                <h3 class="zh">笔记2：线性代数基础</h3>
+                <p class="en">Matrices, vectors, eigenvalues.</p>
+                <p class="zh">矩阵、向量、特征值。</p>
+            </div>
+        </section>
+        
+        <!-- Posts Area -->
+        <section id="posts">
+            <h2 class="en">My Posts</h2>
+            <h2 class="zh">我的帖子区</h2>
+            <div class="post-item">
+                <h3 class="en">Post 1: Thoughts on AI Ethics</h3>
+                <h3 class="zh">帖子1：AI伦理思考</h3>
+                <p class="en">Discussing the importance of ethical considerations in AI development.</p>
+                <p class="zh">讨论AI开发中伦理考虑的重要性。</p>
+            </div>
+            <div class="post-item">
+                <h3 class="en">Post 2: Recent Math Discoveries</h3>
+                <h3 class="zh">帖子2：最近数学发现</h3>
+                <p class="en">Exploring new applications of calculus in machine learning.</p>
+                <p class="zh">探索微积分在机器学习中的新应用。</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Copyright © William Shelton</p>
+    </footer>
 </body>
 </html>
