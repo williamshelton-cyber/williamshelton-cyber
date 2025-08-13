@@ -1,235 +1,198 @@
-/* styles.css
-   Nordic/minimal palette:
-   - prussian blue: #003049
-   - sky blue: #78c0e0
-   - light blue: #cfeefb
-   - lavender: #c8aed8
-   - light gray: #f5f6f8
-   - light orange: #ffd59a
-   Pure HTML/CSS solution for language toggle and mobile menu (no JS).
+/* styles.css */
+/* North European Minimalist Style */
+/* Color Palette:
+   - Prussian Blue: #003153
+   - Sky Blue: #87CEEB
+   - Light Blue: #ADD8E6
+   - Light Violet: #EE82EE
+   - Light Gray: #D3D3D3
+   - Light Orange: #FFDAB9
 */
 
-:root{
-  --prussian-blue: #003049;
-  --sky-blue: #78c0e0;
-  --light-blue: #cfeefb;
-  --lavender: #c8aed8;
-  --light-gray: #f5f6f8;
-  --light-orange: #ffd59a;
-
-  --bg: linear-gradient(135deg,var(--light-blue),#eef6ff 40%, var(--light-gray));
-  --card-bg: rgba(255,255,255,0.88);
-  --muted: #6b7280;
-  --radius: 14px;
-  --max-width: 1100px;
-  --gap: 18px;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #D3D3D3; /* Light Gray */
+    color: #003153; /* Prussian Blue */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    transition: background-color 0.3s ease; /* Slight dynamic transition */
 }
 
-/* basic reset */
-* { box-sizing: border-box; }
-html,body { height:100%; margin:0; }
-body{
-  background: var(--bg);
-  background-size:200% 200%;
-  animation: floatBG 28s ease-in-out infinite;
-  color:#0b1b27;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  scroll-behavior: smooth;
-  line-height:1.45;
+header {
+    background-color: #003153; /* Prussian Blue */
+    color: #FFDAB9; /* Light Orange */
+    padding: 20px;
+    text-align: right;
 }
 
-/* visually hidden utility (for inputs) */
-.visually-hidden{
-  position:absolute !important;
-  height:1px; width:1px;
-  overflow:hidden;
-  clip:rect(1px,1px,1px,1px);
-  white-space:nowrap;
+.language-toggle {
+    display: inline-block;
 }
 
-/* header */
-.site-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:1rem;
-  padding:18px clamp(16px,3vw,36px);
-  position:sticky;
-  top:0;
-  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
-  backdrop-filter: blur(6px);
-  z-index:50;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.03);
-}
-.brand{display:flex;align-items:center;gap:12px;}
-.logo{
-  width:44px;height:44px;border-radius:9px;
-  background:linear-gradient(135deg,var(--prussian-blue),var(--sky-blue));
-  box-shadow: 0 6px 18px rgba(3,10,16,0.12);
-}
-.site-title{font-size:1.05rem;margin:0;font-weight:700;}
-
-/* top controls */
-.top-controls{display:flex;align-items:center;gap:10px;}
-.lang-switch{display:flex;gap:6px;align-items:center;}
-.lang-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-width:42px;
-  padding:8px 10px;border-radius:8px;
-  background:transparent;border:1px solid rgba(0,0,0,0.06);
-  cursor:pointer;font-weight:700;
-  user-select:none;
-}
-.menu-toggle{
-  display:inline-flex;align-items:center;justify-content:center;
-  width:44px;height:40px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);cursor:pointer;
-  background:transparent;font-weight:700;
+#lang-toggle {
+    display: none;
 }
 
-/* layout */
-#site-main{display:grid;grid-template-columns:280px 1fr;gap:var(--gap);max-width:var(--max-width);margin:22px auto;padding:0 18px;}
-.sidebar{padding:18px;border-radius:var(--radius);background:var(--card-bg);height:calc(100vh - 120px);position:sticky;top:66px;overflow:auto;box-shadow:0 8px 30px rgba(2,8,20,0.06);}
-.sidebar ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
-.sidebar a{display:block;padding:10px;border-radius:10px;color:var(--prussian-blue);text-decoration:none;font-weight:600}
-.sidebar a:hover{background:linear-gradient(90deg,var(--light-blue),var(--light-gray));}
-
-/* content cards */
-.content{padding:6px 0;}
-.card{
-  margin-bottom:18px;
-  padding:18px;
-  border-radius:16px;
-  background:var(--card-bg);
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+.language-toggle label {
+    cursor: pointer;
+    background-color: #87CEEB; /* Sky Blue */
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Dynamic hover */
 }
 
-/* profile */
-.profile-grid{display:flex;gap:18px;align-items:center;}
-.avatar{width:120px;height:120px;border-radius:14px;object-fit:cover;border:3px solid rgba(255,255,255,0.6);box-shadow:0 10px 30px rgba(3,10,30,0.12)}
-.profile-info h2{margin:0 0 6px 0;}
-.basic-info{margin:0;color:var(--muted);font-size:0.95rem;}
-
-/* buttons */
-.btn{
-  display:inline-flex;gap:10px;align-items:center;padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:700;
-  background:linear-gradient(90deg,var(--prussian-blue),var(--sky-blue));
-  color:white;box-shadow:0 8px 20px rgba(3,10,30,0.12);
-}
-.btn.ghost{background:transparent;color:var(--prussian-blue);border:1px solid rgba(0,0,0,0.06);}
-
-/* safe-box */
-.safe-box{
-  padding:14px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(248,249,251,0.9));
-  min-height:68px;color:#0f1724;white-space:pre-wrap;border-left:4px solid var(--sky-blue);
+.language-toggle label:hover {
+    background-color: #ADD8E6; /* Light Blue */
+    transform: scale(1.05);
 }
 
-/* grid cards and posts/notes */
-.grid-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px;}
-.grid-cards .project{padding:12px;border-radius:12px;background:rgba(255,255,255,0.7);border:1px solid rgba(0,0,0,0.04);transition:transform .18s ease, box-shadow .18s ease;}
-.grid-cards .project:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.08);}
-.notes-list, .posts-list{display:flex;flex-direction:column;gap:12px;}
-.post{padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid rgba(0,0,0,0.03);}
-
-/* footer */
-.site-footer{padding:18px;text-align:center;color:var(--muted);}
-
-/* small animations */
-@keyframes floatBG {
-  0% {background-position:0% 0%;}
-  50% {background-position:100% 100%;}
-  100% {background-position:0% 0%;}
+#lang-toggle ~ .language-toggle label .en {
+    display: block;
 }
 
-/* ===========================
-   LANGUAGE TOGGLE (pure CSS)
-   Inputs are at top of document. We use sibling selectors to show/hide elements by [data-lang] attribute.
-   Default: #lang-en checked.
-   =========================== */
-
-/* hide both language blocks by default (then re-show appropriate one) */
-[data-lang="en"], [data-lang="zh"] { display: none; }
-
-/* if English selected, show en elements */
-#lang-en:checked ~ header + main [data-lang="en"],
-#lang-en:checked ~ header ~ main [data-lang="en"],
-#lang-en:checked ~ main [data-lang="en"] {
-  display: inline;
+#lang-toggle ~ .language-toggle label .zh {
+    display: none;
 }
 
-/* hide zh when en selected */
-#lang-en:checked ~ header + main [data-lang="zh"],
-#lang-en:checked ~ header ~ main [data-lang="zh"],
-#lang-en:checked ~ main [data-lang="zh"] {
-  display: none;
+#lang-toggle:checked ~ .language-toggle label .en {
+    display: none;
 }
 
-/* if Chinese selected, show zh elements */
-#lang-zh:checked ~ header + main [data-lang="zh"],
-#lang-zh:checked ~ header ~ main [data-lang="zh"],
-#lang-zh:checked ~ main [data-lang="zh"] {
-  display: inline;
+#lang-toggle:checked ~ .language-toggle label .zh {
+    display: block;
 }
 
-/* hide en when zh selected */
-#lang-zh:checked ~ header + main [data-lang="en"],
-#lang-zh:checked ~ header ~ main [data-lang="en"],
-#lang-zh:checked ~ main [data-lang="en"] {
-  display: none;
+.content .en {
+    display: block;
 }
 
-/* Visual state for language labels (simulate pressed) */
-#lang-en:checked ~ header .lang-btn[for="lang-en"],
-#lang-zh:checked ~ header .lang-btn[for="lang-zh"]{
-  background: var(--prussian-blue);
-  color: #fff;
-  box-shadow: 0 6px 18px rgba(3,10,30,0.12);
+.content .zh {
+    display: none;
 }
 
-/* ===========================
-   MOBILE MENU (pure CSS)
-   =========================== */
-/* default: sidebar visible on wide screens; hidden on small unless checkbox checked */
-@media (max-width:900px){
-  #site-main{grid-template-columns:1fr; padding-bottom:80px;}
-  .sidebar{
-    position:fixed;
-    left:0; top:66px;
-    width:70%;
-    max-width:320px;
-    height: calc(100vh - 66px);
-    transform: translateX(-110%);
-    transition: transform .28s cubic-bezier(.2,.9,.2,1);
-    z-index:60;
-  }
-
-  /* when menu checkbox is checked, slide sidebar in */
-  #menu-open:checked ~ header + main .sidebar,
-  #menu-open:checked ~ main .sidebar {
-    transform: translateX(0%);
-  }
-
-  /* overlay to dim the rest when menu open (pure CSS using pseudo-element on main) */
-  #menu-open:checked ~ header + main::before,
-  #menu-open:checked ~ main::before {
-    content:"";
-    position:fixed; inset:66px 0 0 0;
-    background: rgba(0,0,0,0.28);
-    z-index:55;
-  }
-
-  .menu-toggle{display:inline-flex;}
+#lang-toggle:checked ~ .content .en {
+    display: none;
 }
 
-/* Desktop: ensure menu-toggle label is hidden on wide screens if desired (we keep it visible) */
-@media (min-width:901px){
-  .menu-toggle{display:none;}
+#lang-toggle:checked ~ .content .zh {
+    display: block;
 }
 
-/* small helpers */
-.muted{color:var(--muted);}
-.small{font-size:0.85rem;}
-.card h3{margin-top:0;}
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+    background-color: #FFFFFF; /* White for minimalism */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease; /* Dynamic shadow on hover */
+}
+
+section:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2, h3 {
+    color: #003153; /* Prussian Blue */
+}
+
+#personal-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.avatar-container {
+    flex: 1 1 200px;
+    margin-right: 20px;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #87CEEB; /* Sky Blue */
+    transition: transform 0.3s ease; /* Dynamic rotation on hover */
+}
+
+.avatar:hover {
+    transform: rotate(5deg);
+}
+
+.basic-info {
+    flex: 2 1 300px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #EE82EE; /* Light Violet */
+    color: #003153;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #FFDAB9; /* Light Orange */
+    color: #003153;
+}
+
+.button.zh {
+    display: none;
+}
+
+#lang-toggle:checked ~ .content .buttons .en {
+    display: none;
+}
+
+#lang-toggle:checked ~ .content .buttons .zh {
+    display: inline-block;
+}
+
+.activity-box {
+    background-color: #ADD8E6; /* Light Blue */
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #87CEEB;
+}
+
+.project-item, .note-item, .post-item {
+    background-color: #FFDAB9; /* Light Orange */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.project-item:hover, .note-item:hover, .post-item:hover {
+    background-color: #EE82EE; /* Light Violet */
+}
+
+footer {
+    background-color: #003153;
+    color: #FFDAB9;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Ensure scroll wheel support - default, but add smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
