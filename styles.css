@@ -1,5 +1,15 @@
+/* styles.css
+   Nordic/minimal palette:
+   - prussian blue: #003049
+   - sky blue: #78c0e0
+   - light blue: #cfeefb
+   - lavender: #c8aed8
+   - light gray: #f5f6f8
+   - light orange: #ffd59a
+   Pure HTML/CSS solution for language toggle and mobile menu (no JS).
+*/
+
 :root{
-  /* Color palette */
   --prussian-blue: #003049;
   --sky-blue: #78c0e0;
   --light-blue: #cfeefb;
@@ -8,29 +18,38 @@
   --light-orange: #ffd59a;
 
   --bg: linear-gradient(135deg,var(--light-blue),#eef6ff 40%, var(--light-gray));
-  --card-bg: rgba(255,255,255,0.85);
-  --glass: rgba(255,255,255,0.6);
+  --card-bg: rgba(255,255,255,0.88);
   --muted: #6b7280;
   --radius: 14px;
   --max-width: 1100px;
   --gap: 18px;
-  font-synthesis: none;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
-/* Reset-ish */
-* {box-sizing: border-box;}
-html,body{height:100%;}
+/* basic reset */
+* { box-sizing: border-box; }
+html,body { height:100%; margin:0; }
 body{
-  margin:0;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   background: var(--bg);
-  color: #17202a;
+  background-size:200% 200%;
+  animation: floatBG 28s ease-in-out infinite;
+  color:#0b1b27;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   scroll-behavior: smooth;
+  line-height:1.45;
 }
 
-/* Header */
+/* visually hidden utility (for inputs) */
+.visually-hidden{
+  position:absolute !important;
+  height:1px; width:1px;
+  overflow:hidden;
+  clip:rect(1px,1px,1px,1px);
+  white-space:nowrap;
+}
+
+/* header */
 .site-header{
   display:flex;
   justify-content:space-between;
@@ -39,8 +58,10 @@ body{
   padding:18px clamp(16px,3vw,36px);
   position:sticky;
   top:0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
   backdrop-filter: blur(6px);
-  z-index:40;
+  z-index:50;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03);
 }
 .brand{display:flex;align-items:center;gap:12px;}
 .logo{
@@ -48,23 +69,35 @@ body{
   background:linear-gradient(135deg,var(--prussian-blue),var(--sky-blue));
   box-shadow: 0 6px 18px rgba(3,10,16,0.12);
 }
-.site-title{font-size:1.05rem;margin:0;}
-.top-controls{display:flex;align-items:center;gap:8px;}
-.lang-switch{display:flex;gap:6px;}
+.site-title{font-size:1.05rem;margin:0;font-weight:700;}
+
+/* top controls */
+.top-controls{display:flex;align-items:center;gap:10px;}
+.lang-switch{display:flex;gap:6px;align-items:center;}
 .lang-btn{
-  border:0;padding:8px 10px;border-radius:8px;background:transparent;cursor:pointer;font-weight:600;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:42px;
+  padding:8px 10px;border-radius:8px;
+  background:transparent;border:1px solid rgba(0,0,0,0.06);
+  cursor:pointer;font-weight:700;
+  user-select:none;
 }
-.lang-btn[aria-pressed="true"]{background:var(--prussian-blue);color:white;box-shadow:0 4px 10px rgba(2,10,30,0.15);}
+.menu-toggle{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:44px;height:40px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);cursor:pointer;
+  background:transparent;font-weight:700;
+}
 
-.menu-toggle{background:transparent;border-radius:8px;border:1px solid rgba(0,0,0,0.06);padding:8px;cursor:pointer}
-
-/* Layout */
+/* layout */
 #site-main{display:grid;grid-template-columns:280px 1fr;gap:var(--gap);max-width:var(--max-width);margin:22px auto;padding:0 18px;}
 .sidebar{padding:18px;border-radius:var(--radius);background:var(--card-bg);height:calc(100vh - 120px);position:sticky;top:66px;overflow:auto;box-shadow:0 8px 30px rgba(2,8,20,0.06);}
 .sidebar ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
 .sidebar a{display:block;padding:10px;border-radius:10px;color:var(--prussian-blue);text-decoration:none;font-weight:600}
 .sidebar a:hover{background:linear-gradient(90deg,var(--light-blue),var(--light-gray));}
 
+/* content cards */
 .content{padding:6px 0;}
 .card{
   margin-bottom:18px;
@@ -74,13 +107,13 @@ body{
   box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* Profile */
+/* profile */
 .profile-grid{display:flex;gap:18px;align-items:center;}
 .avatar{width:120px;height:120px;border-radius:14px;object-fit:cover;border:3px solid rgba(255,255,255,0.6);box-shadow:0 10px 30px rgba(3,10,30,0.12)}
 .profile-info h2{margin:0 0 6px 0;}
-.basic-info{margin:0;color:var(--muted);}
+.basic-info{margin:0;color:var(--muted);font-size:0.95rem;}
 
-/* Buttons */
+/* buttons */
 .btn{
   display:inline-flex;gap:10px;align-items:center;padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:700;
   background:linear-gradient(90deg,var(--prussian-blue),var(--sky-blue));
@@ -88,40 +121,115 @@ body{
 }
 .btn.ghost{background:transparent;color:var(--prussian-blue);border:1px solid rgba(0,0,0,0.06);}
 
-/* Safe box for busy content */
+/* safe-box */
 .safe-box{
   padding:14px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(248,249,251,0.9));
-  min-height:68px;color:#0f1724;white-space:pre-wrap; /* keep newlines */
-  border-left:4px solid var(--sky-blue);
+  min-height:68px;color:#0f1724;white-space:pre-wrap;border-left:4px solid var(--sky-blue);
 }
 
-/* Cards grid */
+/* grid cards and posts/notes */
 .grid-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px;}
-.grid-cards .project{
-  padding:12px;border-radius:12px;background:rgba(255,255,255,0.7);
-  border:1px solid rgba(0,0,0,0.04);transition:transform .18s ease, box-shadow .18s ease;
-}
+.grid-cards .project{padding:12px;border-radius:12px;background:rgba(255,255,255,0.7);border:1px solid rgba(0,0,0,0.04);transition:transform .18s ease, box-shadow .18s ease;}
 .grid-cards .project:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.08);}
-
-/* Notes & Posts */
 .notes-list, .posts-list{display:flex;flex-direction:column;gap:12px;}
-.post{padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff, #fbfdff);border:1px solid rgba(0,0,0,0.03);}
+.post{padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid rgba(0,0,0,0.03);}
 
-/* Footer */
+/* footer */
 .site-footer{padding:18px;text-align:center;color:var(--muted);}
 
-/* Responsiveness */
-@media (max-width:900px){
-  #site-main{grid-template-columns:1fr; padding-bottom:80px;}
-  .sidebar{position:relative;height:auto;order:2;}
-  .menu-toggle{display:inline-block;}
-}
-
-/* Small animations */
+/* small animations */
 @keyframes floatBG {
   0% {background-position:0% 0%;}
   50% {background-position:100% 100%;}
   100% {background-position:0% 0%;}
 }
-body{background-size:200% 200%;animation:floatBG 30s ease-in-out infinite;}
 
+/* ===========================
+   LANGUAGE TOGGLE (pure CSS)
+   Inputs are at top of document. We use sibling selectors to show/hide elements by [data-lang] attribute.
+   Default: #lang-en checked.
+   =========================== */
+
+/* hide both language blocks by default (then re-show appropriate one) */
+[data-lang="en"], [data-lang="zh"] { display: none; }
+
+/* if English selected, show en elements */
+#lang-en:checked ~ header + main [data-lang="en"],
+#lang-en:checked ~ header ~ main [data-lang="en"],
+#lang-en:checked ~ main [data-lang="en"] {
+  display: inline;
+}
+
+/* hide zh when en selected */
+#lang-en:checked ~ header + main [data-lang="zh"],
+#lang-en:checked ~ header ~ main [data-lang="zh"],
+#lang-en:checked ~ main [data-lang="zh"] {
+  display: none;
+}
+
+/* if Chinese selected, show zh elements */
+#lang-zh:checked ~ header + main [data-lang="zh"],
+#lang-zh:checked ~ header ~ main [data-lang="zh"],
+#lang-zh:checked ~ main [data-lang="zh"] {
+  display: inline;
+}
+
+/* hide en when zh selected */
+#lang-zh:checked ~ header + main [data-lang="en"],
+#lang-zh:checked ~ header ~ main [data-lang="en"],
+#lang-zh:checked ~ main [data-lang="en"] {
+  display: none;
+}
+
+/* Visual state for language labels (simulate pressed) */
+#lang-en:checked ~ header .lang-btn[for="lang-en"],
+#lang-zh:checked ~ header .lang-btn[for="lang-zh"]{
+  background: var(--prussian-blue);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(3,10,30,0.12);
+}
+
+/* ===========================
+   MOBILE MENU (pure CSS)
+   =========================== */
+/* default: sidebar visible on wide screens; hidden on small unless checkbox checked */
+@media (max-width:900px){
+  #site-main{grid-template-columns:1fr; padding-bottom:80px;}
+  .sidebar{
+    position:fixed;
+    left:0; top:66px;
+    width:70%;
+    max-width:320px;
+    height: calc(100vh - 66px);
+    transform: translateX(-110%);
+    transition: transform .28s cubic-bezier(.2,.9,.2,1);
+    z-index:60;
+  }
+
+  /* when menu checkbox is checked, slide sidebar in */
+  #menu-open:checked ~ header + main .sidebar,
+  #menu-open:checked ~ main .sidebar {
+    transform: translateX(0%);
+  }
+
+  /* overlay to dim the rest when menu open (pure CSS using pseudo-element on main) */
+  #menu-open:checked ~ header + main::before,
+  #menu-open:checked ~ main::before {
+    content:"";
+    position:fixed; inset:66px 0 0 0;
+    background: rgba(0,0,0,0.28);
+    z-index:55;
+  }
+
+  .menu-toggle{display:inline-flex;}
+}
+
+/* Desktop: ensure menu-toggle label is hidden on wide screens if desired (we keep it visible) */
+@media (min-width:901px){
+  .menu-toggle{display:none;}
+}
+
+/* small helpers */
+.muted{color:var(--muted);}
+.small{font-size:0.85rem;}
+.card h3{margin-top:0;}
