@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WilliamShelton's Homepage</title>
-  <!-- 外部 CSS 引用 -->
+  <!-- 外部 .CSS file 引用 -->
   <link rel="stylesheet" href="/williamshelton-cyber/style.css">
 </head>
 <body class="lang-en">
@@ -16,16 +16,17 @@
       <h1 class="name lang-en">William·Shelton</h1>
       <h1 class="name lang-zh">William Shelton</h1>
 
-      <!-- 语言切换按钮 -->
+          <!-- 语言切换button -->
       <button id="lang-switcher">中文 / English</button>
 
-      <!-- 导航栏 -->
+      <!-- my personal page の导航栏 -->
       <nav>
         <ul>
           <li><a href="#about" class="lang-en">About</a><a href="#about" class="lang-zh">关于</a></li>
           <li><a href="#education" class="lang-en">Education</a><a href="#education" class="lang-zh">教育</a></li>
           <li><a href="#projects" class="lang-en">Projects</a><a href="#projects" class="lang-zh">项目</a></li>
           <li><a href="#notes" class="lang-en">Lecture notes</a><a href="#notes" class="lang-zh">笔记与讲义</a></li>
+         <li><a href="#notes" class="lang-en">papers</a><a href="#papers" class="lang-zh">papers</a></li>
           <li><a href="#blog" class="lang-en">Blog</a><a href="#blog" class="lang-zh">博客</a></li>
         </ul>
       </nav>
@@ -38,15 +39,15 @@
       <h2 class="lang-en">About Me</h2>
       <h2 class="lang-zh">关于我</h2>
       <div class="intro">
-        <!-- 头像（在文件夹下放置 avatar.jpg） -->
+        <!-- 头像 -->
         <img src="avatar.jpg" alt="Avatar" class="avatar">
         <div class="intro-text">
           <h3 class="lang-en">Gender): Male</h3>
           <h3 class="lang-zh">【性别】：男性</h3>
           <h3 class="lang-en">Occupation): Student in CS</h3>
-          <h3 class="lang-zh">【职业】：计算机科学系在读学生</h3>
-          <h3 class="lang-en">Interest Points):Mathematics and Applied Mathematics; Computer and Programming; Machine Learning and AI; Computer Vision. &#128538;</h4>
-          <h3 class="lang-zh">【兴趣点】：数学与应用数学；计算机与程序设计；机器学习与AI；计算机视觉 &#128538;</h4>
+          <h3 class="lang-zh">【职业】：计算机系在读学生</h3>
+          <h3 class="lang-en">Interest Points):Mathematics and Applied Mathematics, Analysis; Machine Learning and Artificial Intelligence; Computer Vision & Large Language Models AI4HSS & HCAI. &#128538;</h4>
+          <h3 class="lang-zh">【兴趣点】：数学与应用数学、分析学；机器学习与人工智能；计算机视觉＆大语言模型 AI4HSS＆HCAI &#128538;</h4>
           <p>   </p>
           <p class="lang-en">Seize the day and night, joy knows no bounds;Through hardships and trials, you’re ultimately honed to bloom.</p>
           <p class="lang-zh">只争朝夕，其乐无穷；艰难困苦，玉汝于成</p>    
@@ -97,7 +98,7 @@
             <h4 class="lang-en">Middle school: Comprehensive Science · Physics, Chemistry, Politics;</h4>      
             <h4 class="lang-zh">中学：理综·物理化学政治； </h4>
             <h4 class="lang-en">University: Undergraduate: Engineering - Bachelor of Engineering in Computer Science; Master: To be determined</h4>                  
-            <h4 class="lang-zh">大学：本科：工科·工学学士-计算机科学； 硕士：待定</h4>
+            <h4 class="lang-zh">大学：本科：工科·工学学士-计算机科学与技术； </h4>
 
       
     </section>
@@ -107,7 +108,6 @@
       <h2 style="color: tomato;" class="lang-zh">项目展示   &#128194;</h2>
       <div class="projects-container">
     
-
         
         <div class="project-card">
           <h3 class="lang-en">Project one</h3>
@@ -140,9 +140,242 @@
             onclick="return confirm('确定要下载吗？/Are you sure you want to download?')">download-MATnotes latextemplate
           </a>
         </div>
- 
+ </div>
 
     </section>
+
+
+
+<!-- 论文展示版块 -->
+<section id="papers" class="py-12 bg-gray-50 dark:bg-gray-900">
+  <div class="container mx-auto px-4 md:px-6">
+    <h2 style="color: #7F00FF;" class="text-3xl font-bold mb-8">Publications 📄</h2>
+    
+    <!-- 论文筛选器 - 仅英文 -->
+    <div class="filter-controls mb-8 flex flex-wrap gap-3">
+      <button class="filter-btn active px-4 py-2 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-100 rounded-md hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors">All</button>
+      <button class="filter-btn px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-100 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Journal Articles</button>
+      <button class="filter-btn px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-100 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Conference Papers</button>
+      <button class="filter-btn px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-100 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Preprints</button>
+    </div>
+    
+    <div class="papers-container grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- 论文1 -->
+      <div class="paper-card bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow p-6 border border-gray-100 dark:border-gray-700">
+        <div class="flex justify-between items-start mb-4">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Deep Learning Approaches for Image Recognition</h3>
+          <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 text-xs px-2 py-1 rounded">Journal</span>
+        </div>
+        
+        <p class="text-gray-600 dark:text-gray-300 mb-3">
+          <strong>Authors:</strong> John Doe, Jane Smith, Alex Johnson
+        </p>
+        
+        <p class="text-gray-600 dark:text-gray-300 mb-3">
+          <strong>Journal:</strong> IEEE Transactions on Pattern Analysis and Machine Intelligence
+        </p>
+        
+        <p class="text-gray-600 dark:text-gray-300 mb-3">
+          <strong>Year:</strong> 2023
+        </p>
+        
+        <div class="paper-abstract mb-4 bg-gray-50 dark:bg-gray-700 p-4 rounded">
+          <p class="text-sm text-gray-700 dark:text-gray-200">
+            <strong>Abstract:</strong> This paper presents a novel deep learning framework for image recognition tasks. We demonstrate superior performance compared to existing methods on several benchmark datasets, including ImageNet and COCO. Our approach achieves 98.7% accuracy on standard test sets while reducing computational complexity by 30%.
+          </p>
+        </div>
+        
+        <div class="paper-links flex gap-3">
+          <a href="papers/deep-learning-image-recognition.pdf" download class="text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 text-sm flex items-center">
+            <i class="fa fa-download mr-1"></i> PDF
+          </a>
+          <a href="https://doi.org/10.1109/TPAMI.2023.1234567" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 text-sm flex items-center">
+            <i class="fa fa-external-link mr-1"></i> DOI
+          </a>
+          <a href="https://github.com/johndoe/image-recognition" target="_blank" rel="noopener" class="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 text-sm flex items-center">
+            <i class="fa fa-code mr-1"></i> Code
+          </a>
+        </div>
+      </div>
+      
+      <!-- 论文2 -->
+      <div class="paper-card bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow p-6 border border-gray-100 dark:border-gray-700">
+        <div class="flex justify-between items-start mb-4">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">A Comparative Study of Natural Language Processing Models</h3>
+          <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100 text-xs px-2 py-1 rounded">Conference</span>
+        </div>
+        
+        <p class="text-gray-600 dark:text-gray-300 mb-3">
+          <strong>Authors:</strong> John Doe, Michael Brown
+        </p>
+        
+        <p class="text-gray-600 dark:text-gray-300 mb-3">
+          <strong>Conference:</strong> Neural Information Processing Systems (NeurIPS) 2022
+        </p>
+        
+        <p class="text-gray-600 dark:text-gray-300 mb-3">
+          <strong>Year:</strong> 2022
+        </p>
+        
+        <div class="paper-abstract mb-4 bg-gray-50 dark:bg-gray-700 p-4 rounded">
+          <p class="text-sm text-gray-700 dark:text-gray-200">
+            <strong>Abstract:</strong> In this work, we compare various state-of-the-art NLP models on multiple benchmarks. Our analysis reveals key strengths and weaknesses of transformer-based architectures versus traditional recurrent neural networks across different language tasks.
+          </p>
+        </div>
+        
+        <div class="paper-links flex gap-3">
+          <a href="papers/nlp-models-comparison.pdf" download class="text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 text-sm flex items-center">
+            <i class="fa fa-download mr-1"></i> PDF
+          </a>
+          <a href="https://doi.org/10.48550/arXiv.2211.12345" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 text-sm flex items-center">
+            <i class="fa fa-external-link mr-1"></i> DOI
+          </a>
+          <a href="https://github.com/johndoe/nlp-comparison" target="_blank" rel="noopener" class="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 text-sm flex items-center">
+            <i class="fa fa-code mr-1"></i> Code
+          </a>
+        </div>
+      </div>
+      
+      <!-- 论文3 - 预印本 -->
+      <div class="paper-card bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow p-6 border border-gray-100 dark:border-gray-700">
+        <div class="flex justify-between items-start mb-4">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Federated Learning for Privacy-Preserving Healthcare Analytics</h3>
+          <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-100 text-xs px-2 py-1 rounded">Preprint</span>
+        </div>
+        
+        <p class="text-gray-600 dark:text-gray-300 mb-3">
+          <strong>Authors:</strong> John Doe, Sarah Wilson, Robert Chen
+        </p>
+        
+        <p class="text-gray-600 dark:text-gray-300 mb-3">
+          <strong>Preprint Server:</strong> arXiv
+        </p>
+        
+        <p class="text-gray-600 dark:text-gray-300 mb-3">
+          <strong>Year:</strong> 2023
+        </p>
+        
+        <div class="paper-abstract mb-4 bg-gray-50 dark:bg-gray-700 p-4 rounded">
+          <p class="text-sm text-gray-700 dark:text-gray-200">
+            <strong>Abstract:</strong> This preprint introduces a novel federated learning framework specifically designed for healthcare data analytics. Our approach maintains patient privacy while enabling collaborative model training across multiple healthcare institutions.
+          </p>
+        </div>
+        
+        <div class="paper-links flex gap-3">
+          <a href="papers/federated-learning-healthcare.pdf" download class="text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 text-sm flex items-center">
+            <i class="fa fa-download mr-1"></i> PDF
+          </a>
+          <a href="https://doi.org/10.48550/arXiv.2305.67890" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 text-sm flex items-center">
+            <i class="fa fa-external-link mr-1"></i> DOI
+          </a>
+          <a href="https://github.com/johndoe/federated-healthcare" target="_blank" rel="noopener" class="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 text-sm flex items-center">
+            <i class="fa fa-code mr-1"></i> Code
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 查看更多按钮 -->
+    <div class="mt-10 text-center">
+      <button class="px-6 py-3 bg-purple-100 hover:bg-purple-200 dark:bg-purple-900 dark:hover:bg-purple-800 text-purple-800 dark:text-purple-100 rounded-md transition-colors">
+        View More Publications
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- 支持筛选功能的JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 为筛选按钮添加点击事件
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // 移除所有按钮的active类
+      filterButtons.forEach(btn => {
+        btn.classList.remove('active', 'bg-purple-200', 'dark:bg-purple-800');
+        btn.classList.add('bg-gray-100', 'dark:bg-gray-800');
+      });
+      
+      // 为当前点击的按钮添加active类
+      this.classList.add('active', 'bg-purple-200', 'dark:bg-purple-800');
+      this.classList.remove('bg-gray-100', 'dark:bg-gray-800');
+      
+      // 执行筛选
+      const filterType = this.textContent.trim();
+      filterPapers(filterType);
+    });
+  });
+});
+
+// 筛选论文的函数
+function filterPapers(filterType) {
+  const paperCards = document.querySelectorAll('.paper-card');
+  
+  // 全部显示
+  if (filterType === 'All') {
+    paperCards.forEach(card => {
+      card.style.display = '';
+      // 添加淡入动画
+      card.style.opacity = '0';
+      setTimeout(() => {
+        card.style.transition = 'opacity 0.3s ease';
+        card.style.opacity = '1';
+      }, 50);
+    });
+    return;
+  }
+  
+  // 筛选期刊论文
+  if (filterType === 'Journal Articles') {
+    paperCards.forEach(card => {
+      const isJournal = card.querySelector('.bg-blue-100') !== null;
+      card.style.display = isJournal ? '' : 'none';
+      if (isJournal) {
+        card.style.opacity = '0';
+        setTimeout(() => {
+          card.style.transition = 'opacity 0.3s ease';
+          card.style.opacity = '1';
+        }, 50);
+      }
+    });
+  }
+  
+  // 筛选会议论文
+  if (filterType === 'Conference Papers') {
+    paperCards.forEach(card => {
+      const isConference = card.querySelector('.bg-green-100') !== null;
+      card.style.display = isConference ? '' : 'none';
+      if (isConference) {
+        card.style.opacity = '0';
+        setTimeout(() => {
+          card.style.transition = 'opacity 0.3s ease';
+          card.style.opacity = '1';
+        }, 50);
+      }
+    });
+  }
+  
+  // 筛选预印本
+  if (filterType === 'Preprints') {
+    paperCards.forEach(card => {
+      const isPreprint = card.querySelector('.bg-yellow-100') !== null;
+      card.style.display = isPreprint ? '' : 'none';
+      if (isPreprint) {
+        card.style.opacity = '0';
+        setTimeout(() => {
+          card.style.transition = 'opacity 0.3s ease';
+          card.style.opacity = '1';
+        }, 50);
+      }
+    });
+  }
+}
+</script>
+
+
+
+    
 
     <!-- 博客/评论区版块（只读静态内容） -->
     <section id="blog">
