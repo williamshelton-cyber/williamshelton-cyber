@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="William Shelton's Academic Homepage - Computer Science Student specializing in AI and Machine Learning">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
   <title>WilliamShelton's Homepage</title>
-  <!-- 外部 .CSS file 引用 -->
   <link rel="stylesheet" href="/williamshelton-cyber/style.css">
 </head>
 <body class="lang-en">
@@ -13,20 +15,21 @@
   <header>
     <div class="container">
       <!-- 姓名 -->
-      <h1 class="name lang-en">William·Shelton</h1>
-      <h1 class="name lang-zh">William Shelton</h1>
+      <h1 class="name lang-en">William·Shelton Goh</h1>
+      <h1 class="name lang-zh">William Shelton 吴</h1>
 
-          <!-- 语言切换button -->
-      <button id="lang-switcher">中文 / English</button>
+      <!-- 语言切换button -->
+      <button id="lang-switcher" aria-label="Switch Language">中文 / English</button>
 
       <!-- my personal page の导航栏 -->
-      <nav>
+      <nav aria-label="Main navigation">
         <ul>
           <li><a href="#about" class="lang-en">About</a><a href="#about" class="lang-zh">关于</a></li>
           <li><a href="#education" class="lang-en">Education</a><a href="#education" class="lang-zh">教育</a></li>
           <li><a href="#projects" class="lang-en">Projects</a><a href="#projects" class="lang-zh">项目</a></li>
+          <li><a href="#research" class="lang-en">Research</a><a href="#research" class="lang-zh">科研经历</a></li>
           <li><a href="#notes" class="lang-en">Lecture notes</a><a href="#notes" class="lang-zh">笔记与讲义</a></li>
-         <li><a href="#notes" class="lang-en">papers</a><a href="#papers" class="lang-zh">papers</a></li>
+          <li><a href="#papers" class="lang-en">Papers</a><a href="#papers" class="lang-zh">论文</a></li>
           <li><a href="#blog" class="lang-en">Blog</a><a href="#blog" class="lang-zh">博客</a></li>
         </ul>
       </nav>
@@ -40,343 +43,305 @@
       <h2 class="lang-zh">关于我</h2>
       <div class="intro">
         <!-- 头像 -->
-        <img src="avatar.jpg" alt="Avatar" class="avatar">
+        <img src="avatar.jpg" alt="William Shelton Avatar" class="avatar" loading="lazy">
         <div class="intro-text">
-          <h3 class="lang-en">Gender): Male</h3>
+          <h3 class="lang-en">Gender: Male</h3>
           <h3 class="lang-zh">【性别】：男性</h3>
-          <h3 class="lang-en">Occupation): Student in CS</h3>
+          <h3 class="lang-en">Occupation: Student in CS</h3>
           <h3 class="lang-zh">【职业】：计算机系在读学生</h3>
-          <h3 class="lang-en">Interest Points):Mathematics,Applied Mathematics and Mathematics Analysis; Machine Learning and Artificial Intelligence; Computer Vision & Large Language Models AI4S & HCAI. &#128538;</h4>
-          <h3 class="lang-zh">【兴趣点】：数学与应用数学、数学分析学；机器学习与人工智能；计算机视觉＆大语言模型 AI4S＆HCAI &#128538;</h4>
+          <h3 class="lang-en">Interest Points: Mathematics, Applied Mathematics and Mathematics Analysis; Machine Learning and Artificial Intelligence; Computer Vision & Large Language Models AI4S & HCAI. &#128538;</h3>
+          <h3 class="lang-zh">【兴趣点】：数学与应用数学、数学分析学；机器学习与人工智能；计算机视觉＆大语言模型 AI4S＆HCAI &#128538;</h3>
           <p>   </p>
-          <p class="lang-en">（Personal Signature）：Seize the day and night, joy knows no bounds;Through hardships and trials, you’re ultimately honed to bloom.</p>
+          <p class="lang-en">（Personal Signature）：Seize the day and night, joy knows no bounds; Through hardships and trials, you're ultimately honed to bloom.</p>
           <p class="lang-zh">只争朝夕，其乐无穷；艰难困苦，玉汝于成</p>    
-           <a href="person/about.html" target="_blank" class="button lang-en">Learn More</a>
-          <a href="person/hr.html" target="_blank" class="button lang-en">For HR & Professor</a>
-          <a href="person/about.html" class="button lang-zh">了解更多</a>
-          <a href="person/hr.html" class="button lang-zh">为HR与教授</a>
+          <a href="person/about.html" target="_blank" rel="noopener noreferrer" class="button lang-en">Learn More</a>
+          <a href="person/hr.html" target="_blank" rel="noopener noreferrer" class="button lang-en">For HR & Professor</a>
+          <a href="person/about.html" target="_blank" rel="noopener noreferrer" class="button lang-zh">了解更多</a>
+          <a href="person/hr.html" target="_blank" rel="noopener noreferrer" class="button lang-zh">为HR与教授</a>
         </div>
       </div>
     </section>
 
-   <section id="recent-updates">
+    <section id="recent-updates">
       <h2 class="lang-en">Recent Updates</h2>
       <h2 class="lang-zh">最近动态</h2>
       <div class="recent-updates">
         <div class="update-post">
-          <p class="lang-en">Recently): Prepare for the midterm exam and College English Test Band 6 </p>
-          <p class="lang-zh">最近)：准备期中考试和大学英语6级</p>
+          <p class="lang-en">Recently: Prepare for the midterm exam and College English Test Band 6</p>
+          <p class="lang-zh">最近：准备期中考试和大学英语6级</p>
         </div>
       </div>
     </section>
 
-      <!-- 教育经历版块 -->
+    <!-- 教育经历版块 -->
     <section id="education">
-      <h2 style="color: #90EE90;" class="lang-en">Education  &#127760;</h2>
-      <h2 style="color: #90EE90;" class="lang-zh">教育经历   &#127760;</h2>
+      <h2 style="color: #90EE90;" class="lang-en">Education &#127760;</h2>
+      <h2 style="color: #90EE90;" class="lang-zh">教育经历 &#127760;</h2>
       <ul class="education-list">
         <li>
           <span class="education-time">2018 - 2021</span>
-          <span class="education-info lang-en">Yuyao Experimental School in Zhejiang Province ·Junior High School</span>
+          <span class="education-info lang-en">Yuyao Experimental School in Zhejiang Province · Junior High School</span>
           <span class="education-info lang-zh">浙江省余姚实验学校·初级中学</span>
-          </li>
-       
+        </li>
         <li>
           <span class="education-time">2021 - 2024</span>
-         <span class="education-info lang-en">Zhenhai High School in Zhejiang Province· Senior High School</span>
+          <span class="education-info lang-en">Zhenhai High School in Zhejiang Province · Senior High School</span>
           <span class="education-info lang-zh">浙江省镇海中学·高级中学</span>
         </li>
-        
         <li>
           <span class="education-time">2024 - now</span>
           <span class="education-info lang-en">The Chinese University of Hong Kong, Shenzhen · Undergraduate</span>
           <span class="education-info lang-zh">香港中文大学（深圳）·本科</span>
         </li>
       </ul>
-             <h3 class="lang-en">Specialties and directions</h3>                  
-             <h3 class="lang-zh">专业与方向 </h3>
-            <h4 class="lang-en">Middle school: Comprehensive Science · Physics, Chemistry, Politics;</h4>      
-            <h4 class="lang-zh">中学：理综·物理化学政治； </h4>
-            <h4 class="lang-en">University: Undergraduate: Engineering - Bachelor of Engineering in Computer Science; Master: To be determined</h4>                  
-            <h4 class="lang-zh">大学：本科：工程科学·工学学士-计算机科学与技术； </h4>
-
-      
+      <h3 class="lang-en">Specialties and directions</h3>                  
+      <h3 class="lang-zh">专业与方向</h3>
+      <h4 class="lang-en">Middle school: Comprehensive Science · Physics, Chemistry, Politics;</h4>      
+      <h4 class="lang-zh">中学：理综·物理化学政治；</h4>
+      <h4 class="lang-en">University: Undergraduate: Engineering - Bachelor of Engineering in Computer Science; Master: To be determined</h4>                  
+      <h4 class="lang-zh">大学：本科：工程科学·工学学士-计算机科学与技术；</h4>
     </section>
+
     <!-- 项目展示版块 -->
     <section id="projects">
-      <h2 style="color: tomato;" class="lang-en">Projects  &#128194;</h2>
-      <h2 style="color: tomato;" class="lang-zh">项目展播   &#128194;</h2>
+      <h2 style="color: tomato;" class="lang-en">Projects &#128194;</h2>
+      <h2 style="color: tomato;" class="lang-zh">项目展播 &#128194;</h2>
       <div class="projects-container">
-    
-        
         <div class="project-card">
           <h3 class="lang-en">Project one</h3>
           <h3 class="lang-zh">项目一</h3>
           <p class="lang-en">Simple Java Remote Communication Program</p>
           <p class="lang-zh">Java简易的远程通讯程序</p>
-           <!-- 安全的下载链接 -->
           <a href="src/JAVA remote chatroom.zip" 
-            download="JAVA remote chatroom.zip.zip"
-            onclick="return confirm('确定要下载吗？/Are you sure you want to download?')">download-Java project
+            download="JAVA-remote-chatroom.zip"
+            onclick="return confirm('确定要下载吗？/Are you sure you want to download?')"
+            rel="noopener noreferrer">download-Java project
           </a>
         </div>
+      </div>
     </section>
 
+    <!-- 科研实习与工作经历版块 NEW -->
+    <section id="research">
+      <h2 style="color: #FF6B6B;" class="lang-en">Research & Work Experience &#128200;</h2>
+      <h2 style="color: #FF6B6B;" class="lang-zh">科研实习与工作经历 &#128200;</h2>
+      <div class="research-container">
+          
+        
+        <div class="research-card">
+          <div class="research-header">
+            <h3 class="lang-en">Undergraduate teaching assistant</h3>
+            <h3 class="lang-zh">本科生助教（USTF）</h3>
+            <span class="research-date">Fall 2025</span>
+          </div>
+          
+          <p class="research-institution lang-en">SSE in CUHKSZ</p>
+          <p class="research-institution lang-zh">香港中文大学理工学院</p>
+        </div>
+
+        
+      </div>
     </section>
+
     <!-- 讲义展示版块 -->
     <section id="notes">
-      <h2 style="color: #7F00FF;"  class="lang-en">Lecture notes  &#128194;</h2>
-      <h2 style="color: #7F00FF;" class="lang-zh">讲义与笔记   &#128194;</h2>
+      <h2 style="color: #7F00FF;" class="lang-en">Lecture notes &#128194;</h2>
+      <h2 style="color: #7F00FF;" class="lang-zh">讲义与笔记 &#128194;</h2>
       <div class="notes-container">
-        
         <div class="notes-card">
           <h3 class="lang-en">Project One</h3>
           <h3 class="lang-zh">讲义一</h3>
           <p class="lang-en">MAT2040 - 2042 Lecture Notes on Linear Algebra.</p>
           <p class="lang-zh">MAT2040——2042 线性代数讲义</p>
-           <!-- 安全的下载链接 -->
           <a href="src/LA.zip" 
-            download="MAT2040 - 2042 Lecture Notes on Linear Algebra.zip"
-            onclick="return confirm('确定要下载吗？/Are you sure you want to download?')">download-MATnotes latextemplate
+            download="MAT2040-2042-Linear-Algebra.zip"
+            onclick="return confirm('确定要下载吗？/Are you sure you want to download?')"
+            rel="noopener noreferrer">download-MATnotes latextemplate
           </a>
         </div>
- </div>
-
+      </div>
     </section>
 
-
-
-<!-- 论文展示版块 -->
-<section id="papers" class="py-12 bg-gray-50 dark:bg-gray-900">
-  <div class="container mx-auto px-4 md:px-6">
-    <h2 style="color: #7F00FF;" class="text-3xl font-bold mb-8">Publications and papers 📄</h2>
-    
-    <!-- 论文筛选器 - 仅英文 -->
-    <div class="filter-controls mb-8 flex flex-wrap gap-3">
-      <button class="filter-btn active px-4 py-2 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-100 rounded-md hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors">All</button>
-      <button class="filter-btn px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-100 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Journal Articles</button>
-      <button class="filter-btn px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-100 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Conference Papers</button>
-      <button class="filter-btn px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-100 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Preprints</button>
-    </div>
-    
-    <div class="papers-container grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- 论文1 -->
-      <div class="paper-card bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow p-6 border border-gray-100 dark:border-gray-700">
-        <div class="flex justify-between items-start mb-4">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">temple title(JE)</h3>
-          <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 text-xs px-2 py-1 rounded">Journal</span>
-        </div>
-        
-        <p class="text-gray-600 dark:text-gray-300 mb-3">
-          <strong>Authors:</strong> temple authors
-        </p>
-        
-        <p class="text-gray-600 dark:text-gray-300 mb-3">
-          <strong>Journal:</strong> temple JN
-        </p>
-        
-        <p class="text-gray-600 dark:text-gray-300 mb-3">
-          <strong>Year:</strong> 2025
-        </p>
-        
-        <div class="paper-abstract mb-4 bg-gray-50 dark:bg-gray-700 p-4 rounded">
-          <p class="text-sm text-gray-700 dark:text-gray-200">
-            <strong>Abstract:</strong> temple abstract
-          </p>
-        </div>
-        
-        <div class="paper-links flex gap-3">
-          <a href="paper/deep-learning-image-recognition.pdf" download class="text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 text-sm flex items-center">
-            <i class="fa fa-download mr-1"></i> PDF
-          </a>
-          <a href="https://doi.org/10.1109/TPAMI.2023.1234567" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 text-sm flex items-center">
-            <i class="fa fa-external-link mr-1"></i> DOI
-          </a>
-          <a href="https://github.com/johndoe/image-recognition" target="_blank" rel="noopener" class="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 text-sm flex items-center">
-            <i class="fa fa-code mr-1"></i> Code
-          </a>
-        </div>
-      </div>
-
+    <!-- 论文展示版块 - 重新设计 -->
+    <section id="papers">
+      <h2 style="color: #4A90E2;" class="lang-en">Publications and Papers &#128220;</h2>
+      <h2 style="color: #4A90E2;" class="lang-zh">论文发表 &#128220;</h2>
       
-      <!-- 论文2 -->
-      <div class="paper-card bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow p-6 border border-gray-100 dark:border-gray-700">
-        <div class="flex justify-between items-start mb-4">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">temple title(CE)</h3>
-          <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100 text-xs px-2 py-1 rounded">Conference</span>
-        </div>
-        
-        <p class="text-gray-600 dark:text-gray-300 mb-3">
-          <strong>Authors:</strong> temple name
-        </p>
-        
-        <p class="text-gray-600 dark:text-gray-300 mb-3">
-          <strong>Conference:</strong> temple conf
-        </p>
-        
-        <p class="text-gray-600 dark:text-gray-300 mb-3">
-          <strong>Year:</strong> 2025
-        </p>
-        
-        <div class="paper-abstract mb-4 bg-gray-50 dark:bg-gray-700 p-4 rounded">
-          <p class="text-sm text-gray-700 dark:text-gray-200">
-            <strong>Abstract:</strong> temple abstract
-          </p>
-        </div>
-        
-        <div class="paper-links flex gap-3">
-          <a href="paper/nlp-models-comparison.pdf" download class="text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 text-sm flex items-center">
-            <i class="fa fa-download mr-1"></i> PDF
-          </a>
-          <a href="https://doi.org/10.48550/arXiv.2211.12345" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 text-sm flex items-center">
-            <i class="fa fa-external-link mr-1"></i> DOI
-          </a>
-          <a href="https://github.com/johndoe/nlp-comparison" target="_blank" rel="noopener" class="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 text-sm flex items-center">
-            <i class="fa fa-code mr-1"></i> Code
-          </a>
-        </div>
+      <!-- 论文筛选器 -->
+      <div class="filter-controls">
+        <button class="filter-btn active" data-filter="all">
+          <span class="lang-en">All</span>
+          <span class="lang-zh">全部</span>
+        </button>
+        <button class="filter-btn" data-filter="journal">
+          <span class="lang-en">Journal Articles</span>
+          <span class="lang-zh">期刊论文</span>
+        </button>
+        <button class="filter-btn" data-filter="conference">
+          <span class="lang-en">Conference Papers</span>
+          <span class="lang-zh">会议论文</span>
+        </button>
+        <button class="filter-btn" data-filter="preprint">
+          <span class="lang-en">Preprints</span>
+          <span class="lang-zh">预印本</span>
+        </button>
       </div>
       
-      <!-- 论文3 - 预印本 -->
-      <div class="paper-card bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow p-6 border border-gray-100 dark:border-gray-700">
-        <div class="flex justify-between items-start mb-4">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">基于粒子群与黏菌混合算法的烟雾遮盖模型 </h3>
-          <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-100 text-xs px-2 py-1 rounded">Preprint</span>
-        </div>
-        
-        <p class="text-gray-600 dark:text-gray-300 mb-3">
-          <strong>Authors:</strong> WJL CJM YJN
-        </p>
-        
-        <p class="text-gray-600 dark:text-gray-300 mb-3">
-          <strong>Preprint Server:</strong> CUMCM
-        </p>
-        
-        <p class="text-gray-600 dark:text-gray-300 mb-3">
-          <strong>Year:</strong> 2025
-        </p>
-        
-        <div class="paper-abstract mb-4 bg-gray-50 dark:bg-gray-700 p-4 rounded">
-          <p class="text-sm text-gray-700 dark:text-gray-200">
-            <strong>Abstract:</strong> This preprint introduces a Smoke Model Based on Particle Swarm and Slime Mold Hybrid Algorithm
+      <div class="papers-container">
+        <!-- 论文1 - Journal -->
+        <div class="paper-card" data-type="journal">
+          <div class="paper-badge journal-badge">
+            <span class="lang-en">Journal</span>
+            <span class="lang-zh">期刊</span>
+          </div>
+          <h3 class="paper-title lang-en">temple title (JE)</h3>
+          <h3 class="paper-title lang-zh">模板标题（期刊）</h3>
+          
+          <p class="paper-meta">
+            <strong class="lang-en">Authors:</strong>
+            <strong class="lang-zh">作者：</strong>
+            temple authors
           </p>
+          
+          <p class="paper-meta">
+            <strong class="lang-en">Journal:</strong>
+            <strong class="lang-zh">期刊：</strong>
+            temple JN
+          </p>
+          
+          <p class="paper-meta">
+            <strong class="lang-en">Year:</strong>
+            <strong class="lang-zh">年份：</strong>
+            2025
+          </p>
+          
+          <div class="paper-abstract">
+            <p>
+              <strong class="lang-en">Abstract:</strong>
+              <strong class="lang-zh">摘要：</strong>
+              <span class="lang-en">temple abstract</span>
+              <span class="lang-zh">模板摘要</span>
+            </p>
+          </div>
+          
+          <div class="paper-links">
+            <a href="paper/deep-learning-image-recognition.pdf" download rel="noopener noreferrer" class="paper-link">
+              📄 PDF
+            </a>
+            <a href="https://doi.org/10.1109/TPAMI.2023.1234567" target="_blank" rel="noopener noreferrer" class="paper-link">
+              🔗 DOI
+            </a>
+            <a href="https://github.com/johndoe/image-recognition" target="_blank" rel="noopener noreferrer" class="paper-link">
+              💻 Code
+            </a>
+          </div>
+        </div>
+
+        <!-- 论文2 - Conference -->
+        <div class="paper-card" data-type="conference">
+          <div class="paper-badge conference-badge">
+            <span class="lang-en">Conference</span>
+            <span class="lang-zh">会议</span>
+          </div>
+          <h3 class="paper-title lang-en">temple title (CE)</h3>
+          <h3 class="paper-title lang-zh">模板标题（会议）</h3>
+          
+          <p class="paper-meta">
+            <strong class="lang-en">Authors:</strong>
+            <strong class="lang-zh">作者：</strong>
+            temple name
+          </p>
+          
+          <p class="paper-meta">
+            <strong class="lang-en">Conference:</strong>
+            <strong class="lang-zh">会议：</strong>
+            temple conf
+          </p>
+          
+          <p class="paper-meta">
+            <strong class="lang-en">Year:</strong>
+            <strong class="lang-zh">年份：</strong>
+            2025
+          </p>
+          
+          <div class="paper-abstract">
+            <p>
+              <strong class="lang-en">Abstract:</strong>
+              <strong class="lang-zh">摘要：</strong>
+              <span class="lang-en">temple abstract</span>
+              <span class="lang-zh">模板摘要</span>
+            </p>
+          </div>
+          
+          <div class="paper-links">
+            <a href="paper/nlp-models-comparison.pdf" download rel="noopener noreferrer" class="paper-link">
+              📄 PDF
+            </a>
+            <a href="https://doi.org/10.48550/arXiv.2211.12345" target="_blank" rel="noopener noreferrer" class="paper-link">
+              🔗 DOI
+            </a>
+            <a href="https://github.com/johndoe/nlp-comparison" target="_blank" rel="noopener noreferrer" class="paper-link">
+              💻 Code
+            </a>
+          </div>
         </div>
         
-        <div class="paper-links flex gap-3">
-          <a href="paper/基于粒子群与黏菌混合算法的烟雾遮盖模型.pdf" download class="text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 text-sm flex items-center">
-            <i class="fa fa-download mr-1"></i> PDF
-          </a>
-          </a>
-          <a href="https://github.com/johndoe/federated-healthcare" target="_blank" rel="noopener" class="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 text-sm flex items-center">
-            <i class="fa fa-code mr-1"></i> Code(this article's code is in PDF)
-          </a>
+        <!-- 论文3 - Preprint -->
+        <div class="paper-card" data-type="preprint">
+          <div class="paper-badge preprint-badge">
+            <span class="lang-en">Preprint</span>
+            <span class="lang-zh">预印本</span>
+          </div>
+          <h3 class="paper-title">基于粒子群与黏菌混合算法的烟雾遮盖模型</h3>
+          
+          <p class="paper-meta">
+            <strong class="lang-en">Authors:</strong>
+            <strong class="lang-zh">作者：</strong>
+            WJL, CJM, YJN
+          </p>
+          
+          <p class="paper-meta">
+            <strong class="lang-en">Preprint Server:</strong>
+            <strong class="lang-zh">预印本服务器：</strong>
+            CUMCM
+          </p>
+          
+          <p class="paper-meta">
+            <strong class="lang-en">Year:</strong>
+            <strong class="lang-zh">年份：</strong>
+            2025
+          </p>
+          
+          <div class="paper-abstract">
+            <p>
+              <strong class="lang-en">Abstract:</strong>
+              <strong class="lang-zh">摘要：</strong>
+              <span class="lang-en">This preprint introduces a Smoke Model Based on Particle Swarm and Slime Mold Hybrid Algorithm</span>
+              <span class="lang-zh">本预印本介绍了基于粒子群与黏菌混合算法的烟雾遮盖模型</span>
+            </p>
+          </div>
+          
+          <div class="paper-links">
+            <a href="paper/基于粒子群与黏菌混合算法的烟雾遮盖模型.pdf" download rel="noopener noreferrer" class="paper-link">
+              📄 PDF
+            </a>
+            <a href="#" class="paper-link disabled">
+              💻 <span class="lang-en">Code (in PDF)</span><span class="lang-zh">代码（在PDF中）</span>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-    
-    <!-- 查看更多按钮 -->
-    <div class="mt-10 text-center">
-      <button class="px-6 py-3 bg-purple-100 hover:bg-purple-200 dark:bg-purple-900 dark:hover:bg-purple-800 text-purple-800 dark:text-purple-100 rounded-md transition-colors">
-        View More Publications
-      </button>
-    </div>
-  </div>
-</section>
-
-<!-- 支持筛选功能的JavaScript -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // 为筛选按钮添加点击事件
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  filterButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      // 移除所有按钮的active类
-      filterButtons.forEach(btn => {
-        btn.classList.remove('active', 'bg-purple-200', 'dark:bg-purple-800');
-        btn.classList.add('bg-gray-100', 'dark:bg-gray-800');
-      });
       
-      // 为当前点击的按钮添加active类
-      this.classList.add('active', 'bg-purple-200', 'dark:bg-purple-800');
-      this.classList.remove('bg-gray-100', 'dark:bg-gray-800');
-      
-      // 执行筛选
-      const filterType = this.textContent.trim();
-      filterPapers(filterType);
-    });
-  });
-});
+      <!-- 查看更多按钮 -->
+      <div class="view-more">
+        <button class="view-more-btn">
+          <span class="lang-en">View More Publications</span>
+          <span class="lang-zh">查看更多论文</span>
+        </button>
+      </div>
+    </section>
 
-// 筛选论文的函数
-function filterPapers(filterType) {
-  const paperCards = document.querySelectorAll('.paper-card');
-  
-  // 全部显示
-  if (filterType === 'All') {
-    paperCards.forEach(card => {
-      card.style.display = '';
-      // 添加淡入动画
-      card.style.opacity = '0';
-      setTimeout(() => {
-        card.style.transition = 'opacity 0.3s ease';
-        card.style.opacity = '1';
-      }, 50);
-    });
-    return;
-  }
-  
-  // 筛选期刊论文
-  if (filterType === 'Journal Articles') {
-    paperCards.forEach(card => {
-      const isJournal = card.querySelector('.bg-blue-100') !== null;
-      card.style.display = isJournal ? '' : 'none';
-      if (isJournal) {
-        card.style.opacity = '0';
-        setTimeout(() => {
-          card.style.transition = 'opacity 0.3s ease';
-          card.style.opacity = '1';
-        }, 50);
-      }
-    });
-  }
-  
-  // 筛选会议论文
-  if (filterType === 'Conference Papers') {
-    paperCards.forEach(card => {
-      const isConference = card.querySelector('.bg-green-100') !== null;
-      card.style.display = isConference ? '' : 'none';
-      if (isConference) {
-        card.style.opacity = '0';
-        setTimeout(() => {
-          card.style.transition = 'opacity 0.3s ease';
-          card.style.opacity = '1';
-        }, 50);
-      }
-    });
-  }
-  
-  // 筛选预印本
-  if (filterType === 'Preprints') {
-    paperCards.forEach(card => {
-      const isPreprint = card.querySelector('.bg-yellow-100') !== null;
-      card.style.display = isPreprint ? '' : 'none';
-      if (isPreprint) {
-        card.style.opacity = '0';
-        setTimeout(() => {
-          card.style.transition = 'opacity 0.3s ease';
-          card.style.opacity = '1';
-        }, 50);
-      }
-    });
-  }
-}
-</script>
-
-
-
-  
-
-    <!-- 博客/评论区版块（只读静态内容） -->
+    <!-- 博客/评论区版块 -->
     <section id="blog">
       <h2 class="lang-en">Blog</h2>
       <h2 class="lang-zh">博客</h2>
@@ -387,7 +352,6 @@ function filterPapers(filterType) {
         <p class="lang-zh">这是我的github网页的第一声啼哭：HelloWorld！</p>
       </article>
 
-      
       <article class="blog-post">
         <h3 class="lang-en">Post Title 2</h3>
         <h3 class="lang-zh">帖子标题 2</h3>
@@ -403,20 +367,88 @@ function filterPapers(filterType) {
       <p class="lang-en">© 2025 William Shelton. All rights reserved.</p>
       <p class="lang-zh">© 2025 William Shelton。保留所有权利。</p>
     </div>
+    <!-- 滚动字幕 -->
+    <div class="scrolling-text" aria-hidden="true">
+      <span>WinterLing William Shelton • WinterLing William Shelton • WinterLing William Shelton • WinterLing William Shelton • </span>
+    </div>
   </footer>
 
-  <!-- 语言切换脚本：切换 body 类名来显示对应语言内容 -->
+  <!-- JavaScript -->
   <script>
-    document.getElementById('lang-switcher').addEventListener('click', function() {
-      const body = document.body;
-      if (body.classList.contains('lang-en')) {
-        body.classList.remove('lang-en');
-        body.classList.add('lang-zh');
-      } else {
-        body.classList.remove('lang-zh');
-        body.classList.add('lang-en');
+    (function() {
+      'use strict';
+      
+      // 语言切换
+      const langSwitcher = document.getElementById('lang-switcher');
+      if (langSwitcher) {
+        langSwitcher.addEventListener('click', function() {
+          const body = document.body;
+          if (body.classList.contains('lang-en')) {
+            body.classList.remove('lang-en');
+            body.classList.add('lang-zh');
+          } else {
+            body.classList.remove('lang-zh');
+            body.classList.add('lang-en');
+          }
+        });
       }
-    });
+
+      // 论文筛选功能
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const paperCards = document.querySelectorAll('.paper-card');
+
+      filterButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+          const filterType = this.getAttribute('data-filter');
+          
+          // 更新按钮状态
+          filterButtons.forEach(function(btn) {
+            btn.classList.remove('active');
+          });
+          this.classList.add('active');
+          
+          // 筛选论文
+          paperCards.forEach(function(card) {
+            if (filterType === 'all') {
+              card.style.display = '';
+              setTimeout(function() {
+                card.style.opacity = '1';
+              }, 50);
+            } else {
+              const cardType = card.getAttribute('data-type');
+              if (cardType === filterType) {
+                card.style.display = '';
+                setTimeout(function() {
+                  card.style.opacity = '1';
+                }, 50);
+              } else {
+                card.style.opacity = '0';
+                setTimeout(function() {
+                  card.style.display = 'none';
+                }, 300);
+              }
+            }
+          });
+        });
+      });
+
+      // 平滑滚动
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href !== '#') {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          }
+        });
+      });
+    })();
   </script>
 </body>
 </html>
