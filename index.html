@@ -8,8 +8,162 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
   <title>WilliamShelton's Homepage</title>
   <link rel="stylesheet" href="/williamshelton-cyber/style.css">
+  <style>
+    /* 缩小页眉页脚 */
+    header .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+    }
+    
+    footer .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+    }
+    
+    /* Content目录按钮样式 */
+    .content-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+    
+    .content-toggle:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+    }
+    
+    /* 目录面板 */
+    .content-panel {
+      position: fixed;
+      top: 0;
+      right: -350px;
+      width: 320px;
+      height: 100vh;
+      background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+      box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+      transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 999;
+      overflow-y: auto;
+      padding: 80px 30px 30px;
+    }
+    
+    .content-panel.active {
+      right: 0;
+    }
+    
+    .content-panel h3 {
+      font-size: 24px;
+      margin-bottom: 25px;
+      color: #667eea;
+      font-weight: 700;
+    }
+    
+    .content-panel ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .content-panel li {
+      margin-bottom: 15px;
+    }
+    
+    .content-panel a {
+      display: block;
+      padding: 12px 18px;
+      color: #2d3748;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      border-left: 3px solid transparent;
+    }
+    
+    .content-panel a:hover {
+      background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+      border-left-color: #667eea;
+      transform: translateX(5px);
+    }
+    
+    .content-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 998;
+    }
+    
+    .content-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    /* Lecture Notes跳转按钮 */
+    .notes-view-all {
+      text-align: center;
+      margin-top: 30px;
+    }
+    
+    .notes-view-all-btn {
+      display: inline-block;
+      padding: 14px 35px;
+      background: linear-gradient(135deg, #7F00FF 0%, #9D4EDD 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 16px;
+      box-shadow: 0 4px 15px rgba(127, 0, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .notes-view-all-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(127, 0, 255, 0.5);
+    }
+  </style>
 </head>
 <body class="lang-en">
+
+  <!-- Content目录按钮 -->
+  <button class="content-toggle" id="contentToggle" aria-label="Toggle Content Menu">
+    <span class="lang-en">📑 Contents</span>
+    <span class="lang-zh">📑 目录</span>
+  </button>
+
+  <!-- Content目录面板 -->
+  <div class="content-overlay" id="contentOverlay"></div>
+  <div class="content-panel" id="contentPanel">
+    <h3 class="lang-en">Contents</h3>
+    <h3 class="lang-zh">目录</h3>
+    <ul>
+      <li><a href="#about" class="content-link"><span class="lang-en">About Me</span><span class="lang-zh">关于我</span></a></li>
+      <li><a href="#recent-updates" class="content-link"><span class="lang-en">Recent Updates</span><span class="lang-zh">最近动态</span></a></li>
+      <li><a href="#education" class="content-link"><span class="lang-en">Education</span><span class="lang-zh">教育经历</span></a></li>
+      <li><a href="#projects" class="content-link"><span class="lang-en">Projects</span><span class="lang-zh">项目展播</span></a></li>
+      <li><a href="#research" class="content-link"><span class="lang-en">Research & Work</span><span class="lang-zh">科研经历</span></a></li>
+      <li><a href="#notes" class="content-link"><span class="lang-en">Lecture Notes</span><span class="lang-zh">笔记与讲义</span></a></li>
+      <li><a href="#papers" class="content-link"><span class="lang-en">Papers</span><span class="lang-zh">论文发表</span></a></li>
+      <li><a href="#blog" class="content-link"><span class="lang-en">Blog</span><span class="lang-zh">博客</span></a></li>
+    </ul>
+  </div>
 
   <!-- 头部：包含名字、语言切换按钮和导航 -->
   <header>
@@ -126,8 +280,6 @@
       <h2 style="color: #FF6B6B;" class="lang-en">Research & Work Experience &#128200;</h2>
       <h2 style="color: #FF6B6B;" class="lang-zh">科研实习与工作经历 &#128200;</h2>
       <div class="research-container">
-          
-        
         <div class="research-card">
           <div class="research-header">
             <h3 class="lang-en">Undergraduate teaching assistant</h3>
@@ -138,8 +290,6 @@
           <p class="research-institution lang-en">SSE in CUHKSZ</p>
           <p class="research-institution lang-zh">香港中文大学理工学院</p>
         </div>
-
-        
       </div>
     </section>
 
@@ -159,6 +309,14 @@
             rel="noopener noreferrer">download-MATnotes latextemplate
           </a>
         </div>
+      </div>
+      
+      <!-- 查看所有笔记按钮 -->
+      <div class="notes-view-all">
+        <a href="lecturenotes.html" class="notes-view-all-btn">
+          <span class="lang-en">📚 View All Lecture Notes</span>
+          <span class="lang-zh">📚 查看所有讲义笔记</span>
+        </a>
       </div>
     </section>
 
@@ -393,6 +551,32 @@
         });
       }
 
+      // Content目录切换
+      const contentToggle = document.getElementById('contentToggle');
+      const contentPanel = document.getElementById('contentPanel');
+      const contentOverlay = document.getElementById('contentOverlay');
+      
+      function toggleContent() {
+        contentPanel.classList.toggle('active');
+        contentOverlay.classList.toggle('active');
+      }
+      
+      if (contentToggle) {
+        contentToggle.addEventListener('click', toggleContent);
+      }
+      
+      if (contentOverlay) {
+        contentOverlay.addEventListener('click', toggleContent);
+      }
+      
+      // Content目录链接点击后关闭面板
+      const contentLinks = document.querySelectorAll('.content-link');
+      contentLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          toggleContent();
+        });
+      });
+
       // 论文筛选功能
       const filterButtons = document.querySelectorAll('.filter-btn');
       const paperCards = document.querySelectorAll('.paper-card');
@@ -437,18 +621,3 @@
         anchor.addEventListener('click', function(e) {
           const href = this.getAttribute('href');
           if (href !== '#') {
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-              target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              });
-            }
-          }
-        });
-      });
-    })();
-  </script>
-</body>
-</html>
