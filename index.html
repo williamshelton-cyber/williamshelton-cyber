@@ -356,20 +356,32 @@
       </div>
     </section>
 
-    <!-- 近期论文研究分享整理版块（插入于论文与博客之间） -->
-    <section id="research-share">
-      <h2 style="color: #FFB347;" class="lang-en">Recent Research Highlights &#128218;</h2>
-      <h2 style="color: #FFB347;" class="lang-zh">近期论文研究分享整理 &#128218;</h2>
-      <div class="research-share-container">
-        <img src="B.jpg" alt="Recent research snapshot" class="research-share-image" loading="lazy" style="max-width:320px;display:block;margin-bottom:12px;border-radius:6px;">
-        <p class="lang-en">A short curated digest of recent papers and quick takeaways relevant to my interests in machine learning, large language models, and human-computer interaction.</p>
-        <p class="lang-zh">为你精心整理与我研究方向（机器学习、大语言模型与人机交互）相关的近期论文要点与快速笔记。</p>
-        <a href="Share.html" class="button research-share-btn" style="display:inline-block;margin-top:10px;">
-          <span class="lang-en">Open Research Share</span>
-          <span class="lang-zh">打开论文分享</span>
-        </a>
-      </div>
-    </section>
+<!-- 近期论文研究分享整理版块（插入于论文与博客之间） -->
+<section id="research-share" style="margin: 2rem 0; padding: 1rem;">
+  <h2 style="color: #FFB347; margin-bottom: 1.5rem;" class="lang-en">Recent Research Highlights &#128218;</h2>
+  <h2 style="color: #FFB347; margin-bottom: 1.5rem; display: none;" class="lang-zh">近期论文研究分享整理 &#128218;</h2>
+  
+  <!-- 核心：Flex 布局容器 -->
+  <div class="research-share-container" style="display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap;">
+    <!-- 文字+按钮 容器（居左） -->
+    <div class="research-share-text" style="flex: 1; min-width: 280px;">
+      <p class="lang-en" style="margin: 0 0 1rem 0; line-height: 1.6;">I have organized the key points and quick notes of recent papers related to my research direction and areas of interest.</p>
+      <p class="lang-zh" style="margin: 0 0 1rem 0; line-height: 1.6; display: none;">整理了与我研究方向与兴趣点相关的近期论文要点与快速笔记。</p>
+      <a href="Share.html" class="button research-share-btn" style="display: inline-block; margin-top: 0.5rem; padding: 0.6rem 1.2rem; background: #FFB347; color: #fff; border: none; border-radius: 4px; text-decoration: none;">
+        <span class="lang-en">Open Research Share</span>
+        <span class="lang-zh" style="display: none;">打开论文分享</span>
+      </a>
+    </div>
+
+    <!-- 图片（居右，缩小尺寸） -->
+    <img src="B.jpg" alt="Recent research snapshot" class="research-share-image" loading="lazy" 
+         style="max-width: 220px; /* 图片缩小（原320px→220px，可按需调整） */
+                width: 100%; /* 响应式适配 */
+                height: auto; /* 保持宽高比，避免变形 */
+                border-radius: 6px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 可选：增加轻微阴影更美观 */">
+  </div>
+</section>
 
     <!-- 博客/评论区版块 -->
     <section id="blog">
