@@ -14,118 +14,6 @@
   .kai-font {
     font-family: "楷体", "KaiTi_GB2312", "SimKai", "STKaiti", "Microsoft YaHei", sans-serif;
   }
-  
-  /* 研究分享板块样式 */
-  .share-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    margin: 2rem 0;
-  }
-  
-  .share-content {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    width: 100%;
-    max-width: 1000px;
-  }
-  
-  .share-text {
-    flex: 1;
-    color: white;
-  }
-  
-  .share-text h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #fff;
-  }
-  
-  .share-text p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    color: rgba(255,255,255,0.9);
-  }
-  
-  .share-image-container {
-    flex: 1;
-    position: relative;
-    width: 400px;
-    height: 300px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-  }
-  
-  .share-image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-  }
-  
-  .share-image.active {
-    opacity: 1;
-  }
-  
-  .share-btn {
-    background: white;
-    color: #667eea;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 25px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-  }
-  
-  .share-btn:hover {
-    background: #f0f0f0;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255,255,255,0.3);
-  }
-  
-  .share-indicator {
-    display: flex;
-    gap: 8px;
-    margin-top: 1rem;
-    justify-content: center;
-  }
-  
-  .indicator-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.4);
-    transition: all 0.3s ease;
-  }
-  
-  .indicator-dot.active {
-    background: white;
-    transform: scale(1.3);
-  }
-  
-  @media (max-width: 768px) {
-    .share-content {
-      flex-direction: column;
-    }
-    
-    .share-image-container {
-      width: 100%;
-      max-width: 400px;
-    }
-  }
 </style>
 
   <header>
@@ -145,7 +33,6 @@
           <li><a href="#research" class="lang-en">Research</a><a href="#research" class="lang-zh">科研经历</a></li>
           <li><a href="#notes" class="lang-en">Lecture notes</a><a href="#notes" class="lang-zh">笔记与讲义</a></li>
           <li><a href="#papers" class="lang-en">Papers</a><a href="#papers" class="lang-zh">论文</a></li>
-          <li><a href="#share" class="lang-en">Research Share</a><a href="#share" class="lang-zh">研究分享</a></li>
           <li><a href="#blog" class="lang-en">Blog</a><a href="#blog" class="lang-zh">博客</a></li>
         </ul>
       </nav>
@@ -469,45 +356,18 @@
       </div>
     </section>
 
-    <!-- 新板块：近期论文与研究分享 -->
-    <section id="share">
-      <h2 style="color: #667eea;" class="lang-en">Recent Research Highlights &#128161;</h2>
-      <h2 style="color: #667eea;" class="lang-zh">近期论文与研究分享 &#128161;</h2>
-      
-      <div class="share-container">
-        <div class="share-content">
-          <div class="share-text">
-            <h3 class="lang-en">Latest Research Discoveries</h3>
-            <h3 class="lang-zh">最新研究发现</h3>
-            
-            <p class="lang-en">
-              Explore our cutting-edge research in artificial intelligence, machine learning, and computational mathematics. 
-              This section showcases our recent breakthroughs, innovative methodologies, and collaborative projects 
-              that are pushing the boundaries of computer science and applied mathematics.
-            </p>
-            <p class="lang-zh">
-              探索我们在人工智能、机器学习和计算数学领域的前沿研究。
-              本板块展示了我们最新的突破性成果、创新方法论以及推动计算机科学与应用数学边界的合作项目。
-            </p>
-            
-            <a href="Share.html" class="share-btn" target="_blank" rel="noopener noreferrer">
-              <span class="lang-en">🔍 Explore Research</span>
-              <span class="lang-zh">🔍 探索研究详情</span>
-            </a>
-          </div>
-          
-          <div class="share-image-container">
-            <img src="A.jpg" alt="Sulnan Conflict" class="share-image active" id="img-1">
-            <img src="B.jpg" alt="Shanghai" class="share-image" id="img-2">
-            <img src="C.jpg" alt="Singapore" class="share-image" id="img-3">
-          </div>
-        </div>
-        
-        <div class="share-indicator">
-          <span class="indicator-dot active" data-index="0"></span>
-          <span class="indicator-dot" data-index="1"></span>
-          <span class="indicator-dot" data-index="2"></span>
-        </div>
+    <!-- 近期论文研究分享整理版块（插入于论文与博客之间） -->
+    <section id="research-share">
+      <h2 style="color: #FFB347;" class="lang-en">Recent Research Highlights &#128218;</h2>
+      <h2 style="color: #FFB347;" class="lang-zh">近期论文研究分享整理 &#128218;</h2>
+      <div class="research-share-container">
+        <img src="B.jpg" alt="Recent research snapshot" class="research-share-image" loading="lazy" style="max-width:320px;display:block;margin-bottom:12px;border-radius:6px;">
+        <p class="lang-en">A short curated digest of recent papers and quick takeaways relevant to my interests in machine learning, large language models, and human-computer interaction.</p>
+        <p class="lang-zh">为你精心整理与我研究方向（机器学习、大语言模型与人机交互）相关的近期论文要点与快速笔记。</p>
+        <a href="Share.html" class="button research-share-btn" style="display:inline-block;margin-top:10px;">
+          <span class="lang-en">Open Research Share</span>
+          <span class="lang-zh">打开论文分享</span>
+        </a>
       </div>
     </section>
 
@@ -603,39 +463,6 @@
         });
       });
 
-      // 图片轮播功能
-      let currentImageIndex = 0;
-      const images = document.querySelectorAll('.share-image');
-      const indicators = document.querySelectorAll('.indicator-dot');
-      
-      function showImage(index) {
-        images.forEach(function(img) {
-          img.classList.remove('active');
-        });
-        indicators.forEach(function(dot) {
-          dot.classList.remove('active');
-        });
-        
-        images[index].classList.add('active');
-        indicators[index].classList.add('active');
-      }
-      
-      function nextImage() {
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        showImage(currentImageIndex);
-      }
-      
-      // 每5秒切换一次图片
-      setInterval(nextImage, 5000);
-      
-      // 点击指示器切换图片
-      indicators.forEach(function(dot, index) {
-        dot.addEventListener('click', function() {
-          currentImageIndex = index;
-          showImage(currentImageIndex);
-        });
-      });
-
       // 平滑滚动
       document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener('click', function(e) {
@@ -646,3 +473,13 @@
             if (target) {
               target.scrollIntoView({
                 behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
